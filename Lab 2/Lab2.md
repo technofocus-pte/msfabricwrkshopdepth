@@ -664,8 +664,8 @@ style="width:7.34108in;height:3.74583in" />
 > <img src="./media/image57.png"
 > style="width:7.08247in;height:3.49583in" />
 >
-> <img src="./media/image58.png"
-> style="width:7.1253in;height:3.84583in" />
+<img src="./media/image58.png"
+style="width:7.1253in;height:3.84583in" />
 
 2.  Then, in the **Lakehouse explorer** pane on the left, in
     the **…** menu for the **Files** node, select **Refresh.**
