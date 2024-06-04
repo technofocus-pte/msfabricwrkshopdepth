@@ -383,9 +383,9 @@ style="width:7.23418in;height:4.2625in" />
 
 >```CodeCopy
 > from pyspark.sql.types import *
-
+>
 > orderSchema = StructType([
-
+>
 > StructField("SalesOrderNumber", StringType()),
 > StructField("SalesOrderLineNumber", IntegerType()),
 > StructField("OrderDate", DateType()),
@@ -396,7 +396,7 @@ style="width:7.23418in;height:4.2625in" />
 > StructField("UnitPrice", FloatType()),
 > StructField("Tax", FloatType())
 > ])
-
+>
 > df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
 > display(df)
 
@@ -457,7 +457,7 @@ to filter, group, and otherwise manipulate the data it contains.
 3.  Modify the code, replace all the code in the **cell** with the
     following code and click on **▷ Run cell** button as follows:
 
-> CodeCopy
+> ```CodeCopy
 >
 > customers = df.select("CustomerName",
 > "Email").where(df\['Item'\]=='Road-250 Red, 52')
