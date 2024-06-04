@@ -1,4 +1,4 @@
-Lab 03-Use delta tables in Apache Spark
+# Lab 03-Use delta tables in Apache Spark #
 
 **Introduction**
 
