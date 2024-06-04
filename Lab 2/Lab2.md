@@ -538,7 +538,6 @@ or analysis.
 1.  Click on + Code and copy and paste the below code
 
 >```CodeCopy
-
 > from pyspark.sql.functions import \*
 >
 > \## Create Year and Month columns
