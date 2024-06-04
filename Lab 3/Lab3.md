@@ -515,20 +515,20 @@ style="width:6.8625in;height:6.14986in" />
 >
 > \# Create a bar plot of revenue by year on the first axis
 >
-> ax\[0\].bar(x=df_sales\['OrderYear'\],
-> height=df_sales\['GrossRevenue'\], color='orange')
+> ax[0].bar(x=df_sales['OrderYear'],
+> height=df_sales['GrossRevenue'], color='orange')
 >
-> ax\[0\].set_title('Revenue by Year')
+> ax[0].set_title('Revenue by Year')
 >
 > \# Create a pie chart of yearly order counts on the second axis
 >
 > yearly_counts = df_sales\['OrderYear'\].value_counts()
 >
-> ax\[1\].pie(yearly_counts)
+> ax[1].pie(yearly_counts)
 >
-> ax\[1\].set_title('Orders per Year')
+> ax[1].set_title('Orders per Year')
 >
-> ax\[1\].legend(yearly_counts.keys().tolist())
+> ax[1].legend(yearly_counts.keys().tolist())
 >
 > \# Add a title to the Figure
 >
