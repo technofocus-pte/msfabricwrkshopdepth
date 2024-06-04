@@ -347,11 +347,12 @@ style="width:7.23418in;height:4.2625in" />
 >
 > display(df)
 
-<img src="./media/image36.png"
-style="width:7.40851in;height:2.92917in" />
 
-<img src="./media/image37.png"
-style="width:7.38959in;height:4.62917in" />
+ <img src="./media/image36.png"
+ style="width:7.40851in;height:2.92917in" />
+
+ <img src="./media/image37.png"
+ style="width:7.38959in;height:4.62917in" />
 
 9.  Now the dataframe includes the correct column names (in addition to
     the **Index**, which is a built-in column in all dataframes based on
