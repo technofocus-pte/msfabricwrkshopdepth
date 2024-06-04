@@ -257,7 +257,7 @@ in SQL.
 >
 > SELECT YEAR(OrderDate) AS OrderYear,
 >
-> SUM((UnitPrice \* Quantity) + Tax) AS GrossRevenue
+> SUM((UnitPrice * Quantity) + Tax) AS GrossRevenue
 >
 > FROM salesorders
 >
