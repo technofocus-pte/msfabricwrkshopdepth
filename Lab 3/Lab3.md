@@ -343,13 +343,13 @@ alt="A screenshot of a computer Description automatically generated" />
 
 >```Copy
 >
-> sqlQuery = "SELECT CAST(YEAR(OrderDate) AS CHAR(4)) AS OrderYear, \\
+> sqlQuery = "SELECT CAST(YEAR(OrderDate) AS CHAR(4)) AS OrderYear, \
 >
-> SUM((UnitPrice \* Quantity) + Tax) AS GrossRevenue \\
+> SUM((UnitPrice * Quantity) + Tax) AS GrossRevenue \\
 >
-> FROM salesorders \\
+> FROM salesorders \
 >
-> GROUP BY CAST(YEAR(OrderDate) AS CHAR(4)) \\
+> GROUP BY CAST(YEAR(OrderDate) AS CHAR(4)) \
 >
 > ORDER BY OrderYear"
 >
