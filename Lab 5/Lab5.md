@@ -393,15 +393,15 @@ style="width:7.33672in;height:3.47083in" />
   >      [LineageKey] [int] NULL
   >  );
 >
->--fact_sale
+> --fact_sale
 >
 >DROP TABLE IF EXISTS [dbo].[fact_sale];
 >
 >CREATE TABLE [dbo].[fact_sale]
 >
-  >  (
-  >      [SaleKey] [bigint] NULL,
-   >      [CityKey] [int] NULL,
+>  (
+>      [SaleKey] [bigint] NULL,
+>      [CityKey] [int] NULL,
   >      [CustomerKey] [int] NULL,
   >      [BillToCustomerKey] [int] NULL,
   >      [StockItemKey] [int] NULL,
@@ -426,24 +426,24 @@ style="width:7.33672in;height:3.47083in" />
    >      [Quarter] [int] NULL
    > );
 
->
-> <img src="./media/image40.png"
-> style="width:6.49236in;height:4.68958in" />
->
-> <img src="./media/image41.png" style="width:6.5in;height:4.35486in"
-> alt="A screenshot of a computer Description automatically generated" />
+
+ <img src="./media/image40.png"
+ style="width:6.49236in;height:4.68958in" />
+
+ <img src="./media/image41.png" style="width:6.5in;height:4.35486in"
+ alt="A screenshot of a computer Description automatically generated" />
 
 5.  To save this query, right-click on the **SQL query 1** tab just
     above the editor and select **Rename**.
 
-> <img src="./media/image42.png"
-> style="width:6.49167in;height:4.90833in" />
+ <img src="./media/image42.png"
+ style="width:6.49167in;height:4.90833in" />
 
 6.  In the **Rename** dialog box, under **Name** field, enter **Create
     Tables** to change the name of **SQL query 1**. Then, click on the
     **Rename** button.
 
-> <img src="./media/image43.png" style="width:6.5in;height:3.85694in" />
+ <img src="./media/image43.png" style="width:6.5in;height:3.85694in" />
 
 7.  Click on the **Refresh icon** below the **Home** tab, as shown in
     the below image.
