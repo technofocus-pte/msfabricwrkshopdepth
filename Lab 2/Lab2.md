@@ -1,3 +1,5 @@
+# Lab 2: Analyze data with Apache Spark #
+
 **Introduction**
 
 Apache Spark is an open-source engine for distributed data processing,
@@ -207,7 +209,7 @@ style="width:7.05161in;height:2.6888in" />
 5.  Use the **🖉** (Edit) button to switch the cell to editing mode,
     replace all the text then modify the markdown as follows:
 
-> CodeCopy
+> ```CodeCopy
 >
 > \# Sales order data exploration
 >
@@ -248,15 +250,14 @@ style="width:7.42069in;height:2.17917in" />
     data**, then select **Spark**. A new code cell containing the
     following code will be added to the notebook:
 
-> CodeCopy
+> ```CodeCopy
+> df =
+> spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")
 >
-> <span class="mark">df =
-> spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")</span>
->
-> <span class="mark">\# df now is a Spark DataFrame containing CSV data
+> \# df now is a Spark DataFrame containing CSV data
 > from "Files/orders/2019.csv".</span>
 >
-> <span class="mark">display(df)</span>
+> display(df)
 
 <img src="./media/image31.png"
 style="width:7.3125in;height:3.05079in" />
@@ -295,15 +296,14 @@ style="width:6.87401in;height:4.04289in" />
     all the code in the **cell** with the following code and click on
     **▷ Run cell** button and review the output
 
-> CodeCopy
+> ```CodeCopy
+>df =
+> spark.read.format("csv").option("header","false").load("Files/orders/2019.csv")
 >
-> <span class="mark">df =
-> spark.read.format("csv").option("header","false").load("Files/orders/2019.csv")</span>
+> \# df now is a Spark DataFrame containing CSV data
+> from "Files/orders/2019.csv".
 >
-> <span class="mark">\# df now is a Spark DataFrame containing CSV data
-> from "Files/orders/2019.csv".</span>
->
-> <span class="mark">display(df)</span>
+> display(df)
 
 <img src="./media/image35.png"
 style="width:7.23418in;height:4.2625in" />
@@ -316,7 +316,7 @@ style="width:7.23418in;height:4.2625in" />
 8.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
-> CodeCopy
+> ```CodeCopy
 >
 > from pyspark.sql.types import \*
 >
@@ -366,7 +366,7 @@ style="width:7.38959in;height:4.62917in" />
     to the notebook, and enter the following code in it. Click on **▷
     Run cell** button and review the output
 
-> CodeCopy
+> ```CodeCopy
 >
 > display(df)
 >
@@ -380,39 +380,25 @@ style="width:7.38959in;height:4.62917in" />
 13. Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it.
 
-CodeCopy
+>```CodeCopy
+> from pyspark.sql.types import *
 
-> <span class="mark">from pyspark.sql.types import \*</span>
->
-> <span class="mark">orderSchema = StructType(\[</span>
->
-> <span class="mark">    StructField("SalesOrderNumber",
-> StringType()),</span>
->
-> <span class="mark">    StructField("SalesOrderLineNumber",
-> IntegerType()),</span>
->
-> <span class="mark">    StructField("OrderDate", DateType()),</span>
->
-> <span class="mark">    StructField("CustomerName",
-> StringType()),</span>
->
-> <span class="mark">    StructField("Email", StringType()),</span>
->
-> <span class="mark">    StructField("Item", StringType()),</span>
->
-> <span class="mark">    StructField("Quantity", IntegerType()),</span>
->
-> <span class="mark">    StructField("UnitPrice", FloatType()),</span>
->
-> <span class="mark">    StructField("Tax", FloatType())</span>
->
-> <span class="mark">    \])</span>
->
-> <span class="mark">df =
-> spark.read.format("csv").schema(orderSchema).load("Files/orders/\*.csv")</span>
->
-> <span class="mark">display(df)</span>
+>orderSchema = StructType([
+
+> StructField("SalesOrderNumber", StringType()),
+> StructField("SalesOrderLineNumber", IntegerType()),
+> StructField("OrderDate", DateType()),
+> StructField("CustomerName", StringType()),
+> StructField("Email", StringType()),
+> StructField("Item", StringType()),
+> StructField("Quantity", IntegerType()),
+> StructField("UnitPrice", FloatType()),
+> StructField("Tax", FloatType())
+> ])
+
+> df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
+> display(df)
+
 
 <img src="./media/image39.png"
 style="width:7.12659in;height:4.3125in" />
