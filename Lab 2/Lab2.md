@@ -424,7 +424,6 @@ to filter, group, and otherwise manipulate the data it contains.
     to the notebook, and enter the following code in it.
 
 >```CodeCopy
-
 > customers = df\['CustomerName', 'Email'\]
 >
 > print(customers.count())
@@ -484,7 +483,6 @@ to filter, group, and otherwise manipulate the data it contains.
     on **Run cell** button.
 
 >```CodeCopy
-
 > productSales = df.select("Item",
 > "Quantity").groupBy("Item").sum()
 >
