@@ -384,7 +384,7 @@ style="width:7.23418in;height:4.2625in" />
 >```CodeCopy
 > from pyspark.sql.types import *
 
->orderSchema = StructType([
+> orderSchema = StructType([
 
 > StructField("SalesOrderNumber", StringType()),
 > StructField("SalesOrderLineNumber", IntegerType()),
@@ -489,8 +489,8 @@ to filter, group, and otherwise manipulate the data it contains.
 > "Quantity").groupBy("Item").sum()
 >
 > display(productSales)
->
-> <img src="./media/image44.png" style="width:6.5in;height:2.90833in" />
+
+ <img src="./media/image44.png" style="width:6.5in;height:2.90833in" />
 
 2.  Note that the results show the sum of order quantities grouped by
     product. The **groupBy** method groups the rows by *Item*, and the
@@ -539,7 +539,6 @@ or analysis.
 
 >```CodeCopy
 > from pyspark.sql.functions import \*
->
 > \## Create Year and Month columns
 >
 > transformed_df = df.withColumn("Year",
