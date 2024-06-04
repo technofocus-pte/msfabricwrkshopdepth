@@ -1,3 +1,5 @@
+# **Lab 05-Building a data warehouse in Microsoft Fabric** 
+
 **Introduction**
 
 While many concepts in Microsoft Fabric may be familiar to data and
