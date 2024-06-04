@@ -366,13 +366,13 @@ style="width:7.33672in;height:3.47083in" />
     execute the query
 
 >```Copy
-/*
-1. Drop the dimension_city table if it already exists.
-2. Create the dimension_city table.
-3. Drop the fact_sale table if it already exists.
-4. Create the fact_sale table.
-*/
-
+>/*
+>1. Drop the dimension_city table if it already exists.
+>2. Create the dimension_city table.
+>3. Drop the fact_sale table if it already exists.
+>4. Create the fact_sale table.
+>*/
+>
 >--dimension_city
 >DROP TABLE IF EXISTS [dbo].[dimension_city];
 >CREATE TABLE [dbo].[dimension_city]
