@@ -371,8 +371,8 @@ style="width:7.23418in;height:4.2625in" />
 >
 > display(df)
 >
-> <img src="./media/image38.png" style="width:6.5in;height:2.64444in"
-> alt="A screenshot of a computer Description automatically generated" />
+ <img src="./media/image38.png" style="width:6.5in;height:2.64444in"
+ alt="A screenshot of a computer Description automatically generated" />
 
 12. The dataframe includes only the data from the **2019.csv** file.
     Modify the code so that the file path uses a \* wildcard to read the
@@ -423,18 +423,18 @@ to filter, group, and otherwise manipulate the data it contains.
 1.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it.
 
-**<span class="mark">CodeCopy</span>**
+>```CodeCopy
 
-> <span class="mark">customers = df\['CustomerName', 'Email'\]</span>
+> customers = df\['CustomerName', 'Email'\]
 >
-> <span class="mark">print(customers.count())</span>
+> print(customers.count())
 >
-> <span class="mark">print(customers.distinct().count())</span>
+> <print(customers.distinct().count())
 >
-> <span class="mark">display(customers.distinct())</span>
->
-> <img src="./media/image41.png"
-> style="width:6.49167in;height:3.21667in" />
+> display(customers.distinct())
+
+ <img src="./media/image41.png"
+ style="width:6.49167in;height:3.21667in" />
 
 2.  **Run** the new code cell, and review the results. Observe the
     following details:
@@ -460,14 +460,14 @@ to filter, group, and otherwise manipulate the data it contains.
 
 > CodeCopy
 >
-> <span class="mark">customers = df.select("CustomerName",
-> "Email").where(df\['Item'\]=='Road-250 Red, 52')</span>
+> customers = df.select("CustomerName",
+> "Email").where(df\['Item'\]=='Road-250 Red, 52')
 >
-> <span class="mark">print(customers.count())</span>
+> print(customers.count())
 >
-> <span class="mark">print(customers.distinct().count())</span>
+> print(customers.distinct().count())
 >
-> <span class="mark">display(customers.distinct())</span>
+> <display(customers.distinct())
 
 4.  **Run** the modified code to view the customers who have purchased
     the ***Road-250 Red, 52* product**. Note that you can “**chain**”
@@ -483,12 +483,12 @@ to filter, group, and otherwise manipulate the data it contains.
 1.  Click on **+ Code** and copy and paste the below code and then click
     on **Run cell** button.
 
-CodeCopy
+>```CodeCopy
 
-> <span class="mark">productSales = df.select("Item",
-> "Quantity").groupBy("Item").sum()</span>
+> productSales = df.select("Item",
+> "Quantity").groupBy("Item").sum()
 >
-> <span class="mark">display(productSales)</span>
+> display(productSales)
 >
 > <img src="./media/image44.png" style="width:6.5in;height:2.90833in" />
 
@@ -502,7 +502,7 @@ CodeCopy
 3.  Click on **+ Code** and copy and paste the below code and then click
     on **Run cell** button.
 
-> **CodeCopy**
+> ```CodeCopy
 >
 > from pyspark.sql.functions import \*
 >
@@ -537,7 +537,7 @@ or analysis.
 
 1.  Click on + Code and copy and paste the below code
 
-**CodeCopy**
+>```CodeCopy
 
 > from pyspark.sql.functions import \*
 >
@@ -641,14 +641,14 @@ style="width:7.34108in;height:3.74583in" />
 >
 > display(orders_df)
 >
-> <img src="./media/image55.png"
-> style="width:7.08084in;height:2.75417in" />
+ <img src="./media/image55.png"
+ style="width:7.08084in;height:2.75417in" />
 
 5.  **Run** the cell and verify that the results show the order data
     that has been loaded from the parquet files.
 
-> <img src="./media/image56.png"
-> style="width:6.96719in;height:4.2875in" />
+ <img src="./media/image56.png"
+ style="width:6.96719in;height:4.2875in" />
 
 ## Task 3: Save data in partitioned files
 
