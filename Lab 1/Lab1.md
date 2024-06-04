@@ -1,3 +1,6 @@
+# Lab 1: Creating a Lakehouse, ingesting sample data and building a report #
+
+
 **Introduction**
 
 This lab walks you through an end-to-end scenario from data acquisition
@@ -920,8 +923,7 @@ style="width:7.22083in;height:2.57712in" />
 > In this cell, you create three different Spark dataframes, each
 > referencing an existing delta table.
 
-\`\`\`Copy
-
+>```Copy
 > df_fact_sale = spark.read.table("wwilakehouse.fact_sale")
 >
 > df_dimension_date = spark.read.table("wwilakehouse.dimension_date")
