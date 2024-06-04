@@ -389,10 +389,9 @@ style="width:7.33672in;height:3.47083in" />
    >      [Location] [varchar](8000) NULL,
    >      [LatestRecordedPopulation] [bigint] NULL,
    >      [ValidFrom] [datetime2](6) NULL,
-    >      [ValidTo] [datetime2](6) NULL,
-  >      [LineageKey] [int] NULL
+    >     [ValidTo] [datetime2](6) NULL,
+  >       [LineageKey] [int] NULL
   >  );
-  >
 > --fact_sale
 >
 > DROP TABLE IF EXISTS [dbo].[fact_sale];
