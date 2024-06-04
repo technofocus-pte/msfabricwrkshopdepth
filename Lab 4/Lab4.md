@@ -1,4 +1,4 @@
-Lab 04-Create a Dataflow (Gen2) in Microsoft Fabric
+# *Lab 04-Create a Dataflow (Gen2) in Microsoft Fabric*
 
 **Introduction**
 
