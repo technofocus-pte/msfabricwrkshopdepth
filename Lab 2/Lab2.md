@@ -599,7 +599,7 @@ learn more about the methods of the Dataframe object.
     exists). **Run** the cell and wait for the message that the data has
     been saved.
 
-> CodeCopy
+> ```CodeCopy
 >
 > transformed_df.write.mode("overwrite").parquet('Files/transformed_data/orders')
 >
@@ -633,7 +633,7 @@ style="width:7.34108in;height:3.74583in" />
 4.  Click on **+ Code** following code to load a new dataframe from the
     parquet files in the **transformed_data -\> orders** folder:
 
-> **CodeCopy**
+>```CodeCopy
 >
 > orders_df =
 > spark.read.format("parquet").load("Files/transformed_data/orders")
@@ -656,8 +656,7 @@ style="width:7.34108in;height:3.74583in" />
     by **Year** and **Month**. **Run** the cell and wait for the message
     that the data has been saved
 
-> CodeCopy
->
+>``` CodeCopy
 > orders_df.write.partitionBy("Year","Month").mode("overwrite").parquet("Files/partitioned_data")
 >
 > print ("Transformed data saved!")
@@ -692,8 +691,7 @@ style="width:4.51667in;height:7.28333in" />
 4.  Add a new cell, click on **+ Code** with the following code to load
     a new dataframe from the **orders.parquet** file:
 
-> CodeCopy
->
+> ```CodeCopy
 > orders_2021_df =
 > spark.read.format("parquet").load("Files/partitioned_data/Year=2021/Month=\*")
 >
