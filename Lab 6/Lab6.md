@@ -1,3 +1,5 @@
+# *Lab 06-Use notebooks to train a model in Microsoft Fabric*
+
 **Introduction**
 
 In this lab, you’ll use Microsoft Fabric to create a notebook and train
