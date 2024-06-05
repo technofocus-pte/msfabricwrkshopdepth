@@ -824,7 +824,7 @@ style="width:4.44167in;height:5.65833in" />
 
 > ```PythonCopy
 >
-> Churn Rate = AVERAGE(customer_churn_test_predictions\[predictions\])
+> Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
 >
 <img src="./media/image99.png" style="width:6.5in;height:5.55833in" />
 
