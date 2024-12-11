@@ -67,7 +67,7 @@ analysis.
 ## Task 1: Sign in to Power BI account and sign up for the free [Microsoft Fabric trial](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL:!!https://app.fabric.microsoft.com/!!
+    the following URL:+++https://app.fabric.microsoft.com/+++
     then press the **Enter** button.
 
       ![](./media/image1.png)
@@ -139,7 +139,7 @@ reports.
 
        |   |    |
        |----|---|
-       |Name|	!!Fabric Lakehouse Tutorial-XX!! (XX can be a unique number) (here, we entered Fabric Lakehouse Tutorial-29)|
+       |Name|	+++Fabric Lakehouse Tutorial-XX+++ (XX can be a unique number) (here, we entered Fabric Lakehouse Tutorial-29)|
        |Description	|This workspace contains all the items for the lakehouse tutorial |
        |Advanced	|Under License mode, select Trial|
        |Default |storage format	Small dataset storage format|
@@ -169,7 +169,7 @@ reports.
 
      ![](./media/new2.png)
 
-3.  In the **New lakehouse** dialog box, enter **!!wwilakehouse!!** in
+3.  In the **New lakehouse** dialog box, enter **+++wwilakehouse+++** in
     the **Name** field, click on the **Create** button and open the new
     lakehouse.
 
@@ -371,7 +371,7 @@ the Wide World Importers (WWI) into the lakehouse.
     |Property |	Value|
     |URL|	!!https://assetsprod.microsoft.com/en-us/wwi-sample-dataset.zip!!|
     |Connection	|Create a new connection|
-    |Connection name	|!!wwisampledata!! |
+    |Connection name	|+++wwisampledata+++ |
     |Data gateway|	None|
     |Authentication kind|	Anonymous|
 
@@ -501,8 +501,7 @@ that data and prepare it for creating delta tables.
 
      ![](./media/image90.png)
 
-    ** Note**
-    
+    **Note**
     Fabric provides
     the [**V-order**](https://learn.microsoft.com/en-us/fabric/data-engineering/delta-optimization-and-v-order) capability
     to write optimized delta lake files. V-order often improves compression
@@ -550,7 +549,7 @@ that data and prepare it for creating delta tables.
      **Note**: In case, you are unable to see the output, then click on the
      horizontal lines on the left side of **Spark jobs**.
     
-      ```
+        ```
         from pyspark.sql.functions import col, year, month, quarter
         
         table_name = 'fact_sale'
@@ -561,7 +560,7 @@ that data and prepare it for creating delta tables.
         df = df.withColumn('Month', month(col("InvoiceDateKey")))
         
         df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
-     ```
+        ```
       
        ![](./media/image93.png)
        ![](./media/image94.png)
