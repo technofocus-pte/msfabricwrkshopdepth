@@ -83,33 +83,8 @@ KQL queries.
 
       ![](./media/image10.png)
 
-## Task 2: Start the Microsoft Fabric trial
 
-Follow these steps to start your Fabric trial.
-
-1.  On **Power BI Home** page, click on the **Account manager** on the
-    right side. In the Account manager blade, navigate and
-    select **Start trial as shown in the below image.**
-
-      ![](./media/image11.png)
-
-2.  If prompted, agree to the terms and then select **Activate**.
-
-      ![](./media/image12.png)
-
-3.  Once your trial capacity is ready, you receive a confirmation
-    message. Select **Fabric Home Page** to begin working in Fabric.
-
-     ![](./media/image13.png)
-
-4.  Open your Account manager again. Notice that you now have a heading
-    for **Trial status**. Your Account manager keeps track of the number
-    of days remaining in your trial. You will also see the countdown in
-    your Fabric menu bar when you work in a product experience.
-
-     ![](./media/image14.png)
-
-## Task 3: Create a workspace 
+## Task 2: Create a workspace 
 
 Before working with data in Fabric, create a workspace with the Fabric
 trial enabled.
@@ -148,7 +123,7 @@ trial enabled.
 
     ![](./media/image21.png)
 
-## **Task 4:** [**Create a KQL Database**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-1-create-a-kql-database)
+## **Task 3:** [**Create a KQL Database**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-1-create-a-kql-database)
 
 Kusto query language (KQL) is used to query static or streaming data in
 a table that is defined in a KQL database. To analyze the sales data,
@@ -170,7 +145,7 @@ file.
     ![](./media/image24.png)
     ![](./media/image25.png)
 
-## **Task 5: Create a KQL queryset**
+## **Task 4: Create a KQL queryset**
 
 The KQL Queryset exists within the context of a workspace. A new KQL
 queryset is always associated with the workspace you're using when you
