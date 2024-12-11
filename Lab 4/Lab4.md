@@ -1,4 +1,4 @@
-Lab 04-Create a Dataflow (Gen2) in Microsoft Fabric
+# **Lab 04 - Creating and using a Dataflow (Gen2) in Microsoft Fabric**
 
 **Introduction**
 
@@ -11,7 +11,7 @@ This lab is designed to introduce the different elements of Dataflows
 (Gen2), and not create a complex solution that may exist in an
 enterprise.
 
-**Objectives**
+**Objectives**:
 
 - Establish a data lakehouse in the Data Engineering experience and
   ingest relevant data for subsequent analysis.
@@ -26,11 +26,6 @@ enterprise.
   processing and ingestion.
 
 - Remove the workspace and associated elements to conclude the exercise.
-
-**Prerequisites**
-
-- Before starting the Lab 04, complete the **Lab 02: Analyze data with
-  Apache Spark** and **Lab 03-Use delta tables in Apache Spark**
 
 # Exercise 1: Create a Dataflow (Gen2) in Microsoft Fabric
 
@@ -52,30 +47,28 @@ transform, and load* (ETL) process.
 1.  Now, click on **Fabric_lakehouse** on the left-sided navigation
     pane.
 
-<img src="./media/image1.png" style="width:3.4758in;height:5.10417in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image118.png)
 
 2.  In the **Fabric_lakehouse** home page, click on the drop-down arrow
     in the **Get data** and select **New Dataflow Gen2.** The Power
     Query editor for your new dataflow opens.
 
-<img src="./media/image2.png" style="width:6.5in;height:5.35in" />
+     ![](./media/image119.png)
 
 3.  In the **Power Query** pane under the **Home tab**, click on
     **Import from a Text/CSV file**.
 
-<img src="./media/image3.png"
-style="width:6.46667in;height:3.23333in" />
+     ![](./media/image120.png)
 
 4.  In the **Connect to data source** pane, under **Connection
-    settings**, select **Upload file (Preview)** radio button, then
+    settings**, select **Upload file** radio button, then
     click on **Browse** button and browse your VM **C:\LabFiles**, then
     select the **orders file** and click on the **Open** button.
 
-<img src="./media/image4.png" style="width:7.37847in;height:3.25445in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/new15.png)
+     ![](./media/new16.png)
 
-5.  In the **Connect to data source** pane, under **Connection
+6.  In the **Connect to data source** pane, under **Connection
     credentials,** enter the following details and click on the **Next**
     button.
 
@@ -85,89 +78,79 @@ alt="A screenshot of a computer Description automatically generated" />
 
     - **Authentication kind**: Organizational account
 
-<img src="./media/image5.png" style="width:7.37254in;height:3.2822in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image122.png)
 
-6.  In **Preview file data** pane, click on **Create** to create the
+7.  In **Preview file data** pane, click on **Create** to create the
     data source.
-    <img src="./media/image6.png" style="width:7.10464in;height:3.16665in"
-    alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image123.png)
 
-7.  The **Power Query** editor shows the data source and an initial set
+8.  The **Power Query** editor shows the data source and an initial set
     of query steps to format the data.
 
-<img src="./media/image7.png" style="width:7.41251in;height:3.5249in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image124.png)
 
-8.  On the toolbar ribbon, select the **Add column** tab. Then,
+9.  On the toolbar ribbon, select the **Add column** tab. Then,
     select **Custom column.**
 
-<img src="./media/image8.png" style="width:6.49236in;height:3.84097in"
-alt="A screenshot of a computer Description automatically generated" /> 
+     ![](./media/image125.png)
 
-9.  Set the New column name to **MonthNo** , set the Data type to
+10.  Set the New column name to +++MonthNo+++ , set the Data type to
     **Whole Number** and then add the following
-    formula:**Date.Month(\[OrderDate\])** under **Custom column
+    formula:+++Date.Month([OrderDate])+++ under **Custom column
     formula**. Select **OK**.
 
-<img src="./media/image9.png" style="width:6.5in;height:4.46597in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image126.png)
 
-10. Notice how the step to add the custom column is added to the query.
+11. Notice how the step to add the custom column is added to the query.
     The resulting column is displayed in the data pane.
 
-<img src="./media/image10.png" style="width:7.38764in;height:3.66856in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image127.png)
 
-**Tip:** In the Query Settings pane on the right side, notice
-the **Applied Steps** include each transformation step. At the bottom,
-you can also toggle the **Diagram flow** button to turn on the Visual
-Diagram of the steps.
+    **Tip:** In the Query Settings pane on the right side, notice
+    the **Applied Steps** include each transformation step. At the bottom,
+    you can also toggle the **Diagram flow** button to turn on the Visual
+    Diagram of the steps.
+    
+    Steps can be moved up or down, edited by selecting the gear icon, and
+    you can select each step to see the transformations apply in the preview
+    pane.
 
-Steps can be moved up or down, edited by selecting the gear icon, and
-you can select each step to see the transformations apply in the preview
-pane.
-
-Task 2: Add data destination for Dataflow
+#**Task 2: Add data destination for Dataflow**
 
 1.  On the **Power Query** toolbar ribbon, select the **Home** tab. Then
-    in the D**ata destination** drop-down menu, select **Lakehouse**(if
+    in the **Data destination** drop-down menu, select **Lakehouse**(if
     not selected already).
 
-<img src="./media/image11.png" style="width:7.38568in;height:3.49432in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image128.png)
 
-**Note:** If this option is grayed out, you may already have a data
-destination set. Check the data destination at the bottom of the Query
-settings pane on the right side of the Power Query editor. If a
-destination is already set, you can change it using the gear.
+     ![](./media/image129.png)
+
+    **Note:** If this option is grayed out, you may already have a data
+    destination set. Check the data destination at the bottom of the Query
+    settings pane on the right side of the Power Query editor. If a
+    destination is already set, you can change it using the gear.
 
 2.  Click on the **Settings** icon next to the selected **Lakehouse**
     option.
 
-<img src="./media/image12.png" style="width:6.5in;height:2.92778in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image130.png)
 
 3.  In the **Connect to data destination** dialog box, select **Edit
     connection.**
 
-<img src="./media/image13.png" style="width:7.09398in;height:3.0625in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image131.png))
 
 4.  In the **Connect to data destination** dialog box, select **sign
     in** using your Power BI organizational account to set the identity
     that the dataflow uses to access the lakehouse.
 
-<img src="./media/image14.png" style="width:7.04177in;height:2.94129in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image132.png)
 
-<img src="./media/image15.png" style="width:4.80492in;height:4.28494in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image133.png)
 
 5.  In Connect to data destination dialog box, select **Next**
 
-<img src="./media/image16.png" style="width:6.49236in;height:2.81806in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image134.png)
 
 6.  In Connect to data destination dialog box, select **New table**.
     Click on the **Lakehouse folder** ,select your workspace –
@@ -175,45 +158,36 @@ alt="A screenshot of a computer Description automatically generated" />
     **Fabric_lakehouse.** Then specify the Table name as **orders** and
     select **Next** button.
 
-<img src="./media/image17.png" style="width:6.49167in;height:3.13333in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image135.png)
 
 7.  In the **Choose destination settings** dialog box, under **Use
     automatic settings off** and the **Update method** select **Append**
     ,then click on the **Save settings** button.
 
-<img src="./media/image18.png"
-style="width:7.30045in;height:3.15417in" />
-
+      ![](./media/new18.png)
 8.  The **Lakehouse** destination is indicated as an **icon** in the
     **query** in the Power Query editor.
 
-<img src="./media/image19.png" style="width:7.38955in;height:3.28977in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image137.png)
 
-<img src="./media/image20.png" style="width:7.33734in;height:3.50189in"
-alt="A screenshot of a computer Description automatically generated" />
+       ![](./media/image138.png)
 
 9.  Select **Publish** to publish the dataflow. Then wait for
     the **Dataflow 1** dataflow to be created in your workspace.
 
-<img src="./media/image21.png" style="width:7.43468in;height:3.47917in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image139.png)
 
 10. Once published, you can right-click on the dataflow in your
     workspace, select **Properties**, and rename your dataflow.
 
-<img src="./media/image22.png"
-style="width:7.02618in;height:3.77917in" />
+      ![](./media/image140.png)
 
 11. In the **Dataflow1** dialog box, enter the **Name** as
-    **Gen2_Dataflow** and click on **Save** button.
+    **+++Gen2_Dataflow+++** and click on **Save** button.
 
-<img src="./media/image23.png"
-style="width:5.14583in;height:5.75826in" />
+      ![](./media/image141.png)
 
-<img src="./media/image24.png"
-style="width:7.12978in;height:3.82083in" />
+      ![](./media/image142.png)
 
 ## Task 3: Add a dataflow to a pipeline
 
@@ -224,81 +198,70 @@ scheduled process. Pipelines can be created in a few different
 experiences, including Data Factory experience.
 
 1.  In the Synapse Data Engineering Home page , Under **dp_FabricXX**
-    pane, select **+New** -\> **Data pipeline**
+    pane, select **+New item** -\> **Data pipeline**
 
-<img src="./media/image25.png" style="width:6.5in;height:4.825in" />
+      ![](./media/new17.png)
 
 2.  In the **New pipeline** dialog box, enter **Load data** in
     the **Name** field, click on the **Create** button to open the new
     pipeline.
 
-<img src="./media/image26.png" style="width:3.47708in;height:2.71944in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image144.png)
 
 3.  The pipeline editor opens.
 
-<img src="./media/image27.png" style="width:7.40463in;height:4.04011in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image145.png)
 
-> **Tip**: If the Copy Data wizard opens automatically, close it!
+     **Tip**: If the Copy Data wizard opens automatically, close it!
 
 4.  Select **Pipeline activity**, and add a **Dataflow** activity to the
     pipeline.
 
-<img src="./media/image28.png"
-style="width:7.08641in;height:4.17917in" />
+      ![](./media/image146.png)
 
 5.  With the new **Dataflow1** activity selected, on
     the **Settings** tab, in the **Dataflow** drop-down list,
     select **Gen2_Dataflow** (the data flow you created previously)
 
-<img src="./media/image29.png" style="width:6.5in;height:4.825in" />
+      ![](./media/image147.png)
 
 6.  On the **Home** tab, save the pipeline using the **🖫 (*Save*)**
     icon.
 
-<img src="./media/image30.png" style="width:5.3428in;height:3.81523in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image148.png)
 
 7.  Use the **▷ Run** button to run the pipeline, and wait for it to
     complete. It may take a few minutes.
 
-> <img src="./media/image31.png" style="width:6.49236in;height:3.66667in"
-> alt="A screenshot of a computer Description automatically generated" />
->
-> <img src="./media/image32.png" style="width:6.5in;height:3.67847in"
-> alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image149.png)
 
-<img src="./media/image33.png" style="width:6.81127in;height:4.05329in"
-alt="A screenshot of a computer Description automatically generated" />
+       ![](./media/image150.png)
+
+      ![](./media/image151.png)
 
 8.  In the menu bar on the left edge, select your workspace i.e
     **dp_FabricXX**.
 
-<img src="./media/image34.png" style="width:4.17917in;height:4.46863in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image152.png)
 
 9.  In the **Fabric_lakehouse** pane, select the
     **Gen2_FabricLakehouse** of type Lakehouse.
 
-<img src="./media/image35.png" style="width:7.0375in;height:4.8332in" />
+      ![](./media/image153.png)
 
 10. In **Explorer** pane, select the **…** menu for **Tables**,
     select **refresh**. Then expand **Tables** and select
     the **orders** table, which has been created by your dataflow.
 
-<img src="./media/image36.png" style="width:6.45833in;height:5.725in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image154.png)
 
-<img src="./media/image37.png" style="width:6.49167in;height:4.95in" />
+     ![](./media/image155.png)
 
-**Tip**: <span class="mark">Use the Power BI Desktop *Dataflows
-connector* to connect directly to the data transformations done with
-your dataflow.</span>
+**Tip**: Use the Power BI Desktop *Dataflows connector* to connect
+directly to the data transformations done with your dataflow.
 
-<span class="mark">You can also make additional transformations, publish
-as a new dataset, and distribute with intended audience for specialized
-datasets.</span>
+You can also make additional transformations, publish as a new dataset,
+and distribute with intended audience for specialized datasets.
 
 ## Task 4: Clean up resources
 
@@ -311,31 +274,25 @@ workspace you created for this exercise.
 1.  In the bar on the left, select the icon for your workspace to view
     all of the items it contains.
 
-> <img src="./media/image38.png" style="width:4.78333in;height:5.51667in"
-> alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image156.png)
 
 2.  In the **…** menu on the toolbar, select **Workspace settings**.
 
-<img src="./media/image39.png"
-style="width:6.98697in;height:2.7625in" />
+     ![](./media/image157.png)
 
-3.  In the **Other** section, select **Remove this workspace**.
+3.  Select **General** and click on **Remove this workspace.**
 
-<img src="./media/image40.png" style="width:6.89074in;height:3.2375in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image158.png)
 
 4.  In the **Delete workspace?** dialog box, click on the **Delete**
     button.
 
-> <img src="./media/image41.png" style="width:5.8in;height:1.91667in"
-> alt="A screenshot of a computer Description automatically generated" />
->
-> <img src="./media/image42.png" style="width:6.5in;height:4.33333in"
-> alt="A screenshot of a computer Description automatically generated" />
-
+      ![](./media/image159.png)
+ 
+      ![](./media/image160.png)
 **Summary**
 
-This practical lab guides you through the process of setting up a Fabric
+This lab guides you through the process of setting up a Fabric
 workspace, creating a data lakehouse, and ingesting data for analysis.
 It demonstrates how to define a dataflow to handle ETL operations and
 configure data destinations for storing the transformed data.
