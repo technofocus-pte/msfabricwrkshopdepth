@@ -1,4 +1,5 @@
-# Lab 09- Performing Real-Time Analytics using Microsoft Fabric
+# **Lab 09- Performing Real-Time Intelligence using Microsoft Fabric**
+
 **Introduction**
 
 Microsoft Fabric Real-Time Analytics is a fully managed,
@@ -32,78 +33,122 @@ database, and ingest data into the KQL database table - One click
 ingestion of historic data , update policy to perform ETL and write some
 KQL queries.
 
-## Task 1: Create a workspace 
+## **Task 0: Sync Host environment time**
+
+1.  In your VM, navigate and click in the **Search bar**, type
+    **Settings** and then click on **Settings** under **Best match**.
+
+      ![](./media/image1.png)
+
+2.  On Settings window, navigate and click on **Time & language**.
+
+      ![](./media/image2.png)
+
+3.  On **Time & language** page, navigate and click on **Date & time**.
+
+     ![](./media/image3.png)
+
+4.  Scroll down and navigate to **Additional settings** section, then
+    click on **Syn now** button. It will take 3-5 minutes to syn.
+
+     ![](./media/image4.png)
+
+5.  Close the **Settings** window.
+
+      ![](./media/image5.png)
+
+## Task 1: Sign in to Power BI account and sign up for the free 
+
+1.  Open your browser, navigate to the address bar, and type or paste
+    the following URL: +++https://app.fabric.microsoft.com/+++ then
+    press the **Enter** button.
+
+      ![](./media/image6.png)
+
+2.  In the **Microsoft Fabric** window, enter your given credentials,
+    and click on the **Submit** button.
+
+     ![](./media/image7.png)
+
+3.  Then, In the **Microsoft** window enter the password and click on
+    the **Sign in** button . 
+
+      ![](./media/image8.png)
+
+4.  In **Stay signed in?** window, click on the **Yes** button.
+
+     ![](./media/image9.png)
+
+5.  You’ll be directed to Power BI Home page.
+
+      ![](./media/image10.png)
+
+## Task 2: Start the Microsoft Fabric trial
+
+Follow these steps to start your Fabric trial.
+
+1.  On **Power BI Home** page, click on the **Account manager** on the
+    right side. In the Account manager blade, navigate and
+    select **Start trial as shown in the below image.**
+
+      ![](./media/image11.png)
+
+2.  If prompted, agree to the terms and then select **Activate**.
+
+      ![](./media/image12.png)
+
+3.  Once your trial capacity is ready, you receive a confirmation
+    message. Select **Fabric Home Page** to begin working in Fabric.
+
+     ![](./media/image13.png)
+
+4.  Open your Account manager again. Notice that you now have a heading
+    for **Trial status**. Your Account manager keeps track of the number
+    of days remaining in your trial. You will also see the countdown in
+    your Fabric menu bar when you work in a product experience.
+
+     ![](./media/image14.png)
+
+## Task 3: Create a workspace 
 
 Before working with data in Fabric, create a workspace with the Fabric
 trial enabled.
 
-1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: <https://app.fabric.microsoft.com/> then press
-    the **Enter** button.
-
-> **Note**: If you are directed to Microsoft Fabric Home page, then skip
-> steps from \#2 to \#4.
->
-> <img src="./media/image1.png" style="width:5.07917in;height:3.05828in"
-> alt="A screenshot of a computer Description automatically generated" />
-
-2.  In the **Microsoft Fabric** window, enter your credentials, and
-    click on the **Submit** button.
-
-> <img src="./media/image2.png" style="width:6.49167in;height:3.11667in"
-> alt="A close up of a white and green object Description automatically generated" />
-
-3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
-
-> <img src="./media/image3.png" style="width:3.9375in;height:3.34797in"
-> alt="A login screen with a red box and blue text Description automatically generated" />
-
-4.  In **Stay signed in?** window, click on the **Yes** button.
-
-> <img src="./media/image4.png" style="width:3.47917in;height:2.78333in"
-> alt="A screenshot of a computer error Description automatically generated" />
-
-5.  In the **Microsoft Fabric** home page, select the **Power BI**
+1.  In the **Microsoft Fabric** home page, select the **Power BI**
     template.
 
-> <img src="./media/image5.png" style="width:6.49167in;height:4.20833in"
-> alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image15.png)
 
-6.  In the **Power BI Home** page menu bar on the left,
+2.  In the **Power BI Home** page menu bar on the left,
     select **Workspaces** (the icon looks similar to 🗇).
 
-> <img src="./media/image6.png" style="width:6.5in;height:6.23333in"
-> alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image16.png)
 
-7.  In the Workspaces pane, select **+** **New workspace**.
+3.  In the Workspaces pane, select **+New workspace**.
 
-> <img src="./media/image7.png" style="width:3.32126in;height:6.1625in"
-> alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image17.png)
 
-8.  In the **Create a workspace tab**, enter the following details and
+4.  In the **Create a workspace tab**, enter the following details and
     click on the **Apply** button.
 
-| **Name** | ***Fabric Real-Time AnalyticsXX**(*XX can be a unique number) |
-|----|----|
-| **Advanced** | Under **License mode**, select **Trial** |
-| **Default storage format** | **Small dataset storage format** |
+      |   |   |
+      |---|----|
+      |Name|+++Fabric Real-Time AnalyticsXX+++(XX can be a unique number) |
+      |Advanced|	Under License mode, select Trial|
+      |Default| storage format	Small dataset storage format|
 
-> <img src="./media/image8.png" style="width:5.3375in;height:6.94583in" />
+     ![](./media/image18.png)
 
-<img src="./media/image9.png" style="width:5.25417in;height:6.23887in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image19.png)
 
-<img src="./media/image10.png" style="width:4.02917in;height:4.92138in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image20.png)
 
-9.  Wait for the deployment to complete. It takes 2-3 minutes to
+5.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete. When your new workspace opens, it should be empty.
 
-> <img src="./media/image11.png" style="width:5.1799in;height:4.4328in"
-> alt="A screenshot of a computer Description automatically generated" />
+    ![](./media/image21.png)
 
-## **Task 2:** [**Create a KQL Database**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-1-create-a-kql-database)
+## **Task 4:** [**Create a KQL Database**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-1-create-a-kql-database)
 
 Kusto query language (KQL) is used to query static or streaming data in
 a table that is defined in a KQL database. To analyze the sales data,
@@ -111,42 +156,21 @@ you must create a table in a KQL database and ingest the data from the
 file.
 
 1.  At the bottom left of the Power BI portal, select the **Power
-    BI** icon and switch to the **Real-Time Analytics** experience.
+    BI** icon and switch to the **Real-Time Intelligence** experience.
 
-> <img src="./media/image12.png" style="width:3.50833in;height:7.5in" />
+     ![](./media/image22.png)
+ 
+     ![](./media/image23.png)
 
-2.  From your workspace, click on ***+** **New \> More options** as
-    shown in the below image.*
-
-<img src="./media/image13.png"
-style="width:4.10833in;height:5.58333in" />
-
-3.  From your workspace, under **Real-Time Intelligence** select
-    **Real-Time Dashboard***,* enter ***RTA-Dashboard***, then click on
-    the **Create** button.
-
-> <img src="./media/image14.png"
-> style="width:7.10281in;height:3.4875in" />
->
-> <img src="./media/image15.png" style="width:3.2in;height:1.88333in" />
-
-4.  In the **RTA-Dashboard** pane, click on **NewDatabase.**
-
-> <img src="./media/image16.png" style="width:6.49167in;height:4.14167in"
-> alt="A screenshot of a computer Description automatically generated" />
-
-5.  In the **New KQL Database** dialog box, enter the **KQL Database
-    name** as **FabricRTA** (or new database with a name of your choice)
+2.  In the **New Eventhouse** dialog box, enter the **Eventhouse name**
+    as +++FabricRTA+++ (or new database with a name of your choice)
     and click on **Create** button.
 
-**Note**: Remove any extra space before and after **FabricRTA.**
+   **Note**: Remove any extra space before and after **FabricRTA.**
+    ![](./media/image24.png)
+    ![](./media/image25.png)
 
-<img src="./media/image17.png" style="width:3.275in;height:2.53333in" />
-
-<img src="./media/image18.png" style="width:7.05941in;height:4.52376in"
-alt="A screenshot of a computer Description automatically generated" />
-
-## **Task 3: Create a KQL queryset**
+## **Task 5: Create a KQL queryset**
 
 The KQL Queryset exists within the context of a workspace. A new KQL
 queryset is always associated with the workspace you're using when you
@@ -155,44 +179,39 @@ create it.
 1.  Select ***Fabric Real-Time AnalyticsXX*** workspace in the left
     navigation pane.
 
-<img src="./media/image19.png"
-style="width:6.21667in;height:5.65833in" />
+      ![](./media/image26.png)
 
 2.  On the **Synapse Real-Time Analytics Home** page, from the menu bar,
-    select the **New** drop-down, and from there select **KQL Queryset**
+    select the  +**New item**, and then select **KQL Queryset**
 
-<img src="./media/image20.png"
-style="width:5.06667in;height:6.31667in" />
+      ![](./media/image27.png)
 
 3.  In the **New KQL Queryset** dialog box, enter the **KQL Query name**
-    as **querysetXX**(or new database with a name of your choice) and
-    click on **Create** button.
+    as **+++querysetXX+++**(or new database with a name of your choice)
+    and click on **Create** button.
 
-Note: KQL Query name should be alphanumeric characters, underscores,
-periods, and hyphens. Special characters aren't supported.
+      Note: KQL Query name should be alphanumeric characters, underscores,
+      periods, and hyphens. Special characters aren't supported.
 
-<img src="./media/image21.png" style="width:3.225in;height:1.975in" />
+      ![](./media/image28.png)
 
-6.  In **OneLake data hub** pane ,select **FabricRTA** KQL Database and
+4.  In **OneLake data hub** pane ,select **FabricRTA** KQL Database and
     click on **Select** button.
 
-<img src="./media/image22.png"
-style="width:7.03378in;height:4.27083in" />
+     ![](./media/image29.png)
 
-<img src="./media/image23.png" style="width:6.5in;height:4.02361in" />
+    ![](./media/image30.png)
+5.  Now you can write a simple KQL query:
+   
+     +++print "Hello World"+++
 
-4.  Now you can write a simple KQL query:
+      ![](./media/image31.png)
 
-> <span class="mark">print "Hello World"</span>
-
-<img src="./media/image24.png" style="width:6.5in;height:4.01667in" />
-
-5.  Highlight the line with the code and hit the **Run** button. The
+6.  Highlight the line with the code and hit the **Run** button. The
     query will be executed and its result can be seen in the result grid
     at the bottom of the page.
 
-<img src="./media/image25.png"
-style="width:6.49167in;height:4.19167in" />
+      ![](./media/image32.png)
 
 # **Exercise 2: Ingest data from Azure Storage Account**
 
@@ -211,38 +230,26 @@ KQL Database.
 
 1.  In KQL queryset pane, replace all the code in the **cell** with the
     following code and click on **▷ Run** button to create a table
-
->```*Copy**
->
->.create table logsRaw(
->
->Timestamp:datetime,
->
->Source:string,
->
->Node:string,
->
->Level:string,
->
->Component:string,
->
->ClientRequestId:string,
->
->Message:string,
->
->Properties:dynamic
->
->)
-
-<img src="./media/image26.png" style="width:6.5in;height:4.4in" />
-
-<img src="./media/image27.png" style="width:6.49167in;height:2.925in" />
+      ```
+      .create table logsRaw(
+          Timestamp:datetime, 
+          Source:string, 
+          Node:string, 
+          Level:string, 
+          Component:string, 
+          ClientRequestId:string, 
+          Message:string, 
+          Properties:dynamic
+      )
+      ```
+      
+      ![](./media/image33.png)
 
 2.  Click on refresh to see the new table on the left.
 
-<img src="./media/image28.png" style="width:6.5in;height:4.33333in" />
+      ![](./media/image34.png)
 
-<img src="./media/image29.png" style="width:6.5in;height:5.225in" />
+      ![](./media/image35.png)
 
 ## **Task 2: Use the “One-click” User Interface to ingest data from Azure blob storage**
 
@@ -251,59 +258,53 @@ Azure blob storage.
 
 1.  Select **FabricRTA** d*atabase* in the left navigation pane.
 
-<img src="./media/image30.png" style="width:5.675in;height:5.68333in" />
+     ![](./media/image36.png)
+
+     ![](./media/image37.png)
 
 2.  In **FabricRTA** database, under the **Home** tab, navigate and
     click on **Get data** in the command bar, then select **Azure
     Storage**.
 
-<img src="./media/image31.png" style="width:6.5in;height:4.55833in" />
+     ![](./media/image38.png)
 
 3.  Then use the wizard to import the data into a new table by selecting
     the following options:
 
 4.  In the **Get data** tab, select the existing table as **logsRaw**.
     Under the Configure the data source tab enter the **URI :**
-    <https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014>
-
-<img src="./media/image32.png"
-style="width:6.97611in;height:4.2125in" />
+    +++https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014+++    
+      ![](./media/image39.png)
 
 5.  In the **Get data** tab, click on the **+** and click on **Next**
     button.
 
-<img src="./media/image33.png"
-style="width:6.49167in;height:3.95833in" />
+    ![](./media/image40.png)
 
 6.  In Get data tab under the Inspect the data click on the horizontal
     **ellipses (…)** beside Edit columns, select the **Advanced** and
-    check the **Keep table schema.** Click on the **Finish** button**.**
+    check the **Keep table schema.** Click on the **Finish** button.
 
-<img src="./media/image34.png"
-style="width:7.00659in;height:3.74583in" />
+    ![](./media/image41.png)
 
 7.  Wait for the Data ingestion to be completed, and click **Close**.
 
-<img src="./media/image35.png"
-style="width:7.02917in;height:4.34876in" />
+      ![](./media/image42.png)
 
-<img src="./media/image36.png"
-style="width:7.36038in;height:3.44978in" />
+       ![](./media/image43.png)
 
 8.  Select **querysetXX** KQL queryset in the left navigation pane.
 
-<img src="./media/image37.png" style="width:6.5in;height:5.3in" />
+      ![](./media/image44.png)
 
 9.  Replace all the code in the **cell** with the following code and
     click on **▷ Run** button
-
->```Copy
->
->logsRaw
->| count
-
-<img src="./media/image38.png"
-style="width:6.49167in;height:3.51667in" />
+      ```
+        logsRaw
+        | count
+      ```
+      
+      ![](./media/image45.png)
 
 The logsRaw table should have 3,834,012 records.
 
@@ -318,15 +319,13 @@ returns data in a tabular or graph format.
 
 1.  For all the SQL pros out there, KQL Database allows a subset of TSQL
     queries. Try running the following SQL query in web UI. Replace all
-    the code in the **cell** with the following code and click on **▷
-    Run** button.
+    the code in the **cell** with the following code and click on **▷Run** button.
 
->```**Copy**
->
->SELECT COUNT() FROM logsRaw
-
-<img src="./media/image39.png"
-style="width:6.49167in;height:3.00833in" />
+      **Copy**
+      ```
+      SELECT COUNT() FROM logsRaw
+      ```
+      ![](./media/image46.png)
 
 2.  The primary language to interact with Kusto is KQL (Kusto Query
     Language). To make the transition and learning experience easier,
@@ -335,22 +334,21 @@ style="width:6.49167in;height:3.00833in" />
 3.  Replace all the code in the **cell** with the following code and
     click on **▷ Run** button.
 
->```**Copy**
->
->explain SELECT MAX(Timestamp) AS MaxTimestamp FROM logsRaw WHERE Level='Error'
+   **Copy**
+   ```
+   explain SELECT MAX(Timestamp) AS MaxTimestamp FROM logsRaw WHERE Level='Error'
+   ```
+   ![](./media/image47.png)
 
-<img src="./media/image40.png"
-style="width:6.80417in;height:3.63355in" />
-
-Output of the above query will be a corresponding KQL query
-
-logsRaw
-
-\| where (Level == "Error")
-
-\| summarize MaxTimestamp=max(Timestamp)
-
-\| project MaxTimestamp
+   Output of the above query will be a corresponding KQL query
+   
+   logsRaw
+   
+   | where (Level == "Error")
+   
+   | summarize MaxTimestamp=max(Timestamp)
+   
+   | project MaxTimestamp
 
 ## **Task 2: Basic KQL queries - explore the data**
 
@@ -366,14 +364,13 @@ storage account.
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run** button.
 
-> ```**Copy**
->
->logsRaw
-> | where Level=="Error"
->| take 10
-
-<img src="./media/image41.png"
-style="width:7.26042in;height:3.1875in" />
+      **Copy**
+    ```
+       logsRaw
+      | where Level=="Error"
+      | take 10
+    ```
+   ![](./media/image48.png)
 
 The take operator samples any number of records from our table without
 any order. In the above example, we asked to provide 10 random records.
@@ -381,44 +378,43 @@ any order. In the above example, we asked to provide 10 random records.
 3.  Find out how many records are in the table. Replace all the code in
     the **cell** with the following code and click on **▷ Run** button.
 
->```**Copy**
->
->logsRaw
->| summarize count() // or: count</span>
+      **Copy**
+      ```
+      logsRaw
+      | summarize count() // or: count
+      ```
 
-<img src="./media/image42.png"
-style="width:6.49167in;height:3.20833in" />
+      ![](./media/image49.png)
 
 4.  Find out the minimum and maximum Timestamp. Replace all the code in
     the **cell** with the following code and click on **▷ Run** button.
 
->```**Copy**
->
->logsRaw
->| summarize min(Timestamp), max(Timestamp)
-
-<img src="./media/image43.png"
-style="width:7.14892in;height:2.94583in" />
+      **Copy**
+      ```
+      logsRaw
+      | summarize min(Timestamp), max(Timestamp)
+      ```
+      ![](./media/image50.png)
 
 5.  Our dataset has trace records written by Contoso's DOWNLOADER
     program, which downloads files from blob storage as part of its
     business operations. Replace all the code in the **cell** with the
     following code and click on **▷ Run** button.
 
->```**Copy**
->logsRaw
-> where Component == "DOWNLOADER"
->| take 10
-
-<img src="./media/image44.png"
-style="width:7.08091in;height:2.95417in" />
+      **Copy**
+      ```
+      logsRaw
+      | where Component == "DOWNLOADER"
+      | take 10
+      ```
+      
+      ![](./media/image51.png)
 
 6.  Select the **Properties** column is dynamic. The dynamic data type
     is special in that it can take on any value of other data types, as
     well as arrays and property bags (dictionaries).
 
-<img src="./media/image45.png"
-style="width:6.49167in;height:2.38333in" />
+      ![](./media/image52.png)
 
 7.  The dynamic type is extremely beneficial when it comes to storing
     JSON data, since KQL makes it simple to access fields in JSON and
@@ -431,14 +427,14 @@ style="width:6.49167in;height:2.38333in" />
     Replace all the code in the **cell** with the following code and
     click on **▷ Run** button.
 
->```**Copy**
->logsRaw
->| where Component == "DOWNLOADER"
->| take 100
->| extend originalSize=Properties.OriginalSize,compressedSize=Properties.compressedSize
-
-<img src="./media/image46.png"
-style="width:7.42495in;height:3.74583in" />
+      **Copy**
+      ```
+      logsRaw
+      | where Component == "DOWNLOADER"
+      | take 100
+      | extend originalSize=Properties.OriginalSize, compressedSize=Properties.compressedSize
+      ```
+      ![](./media/image53.png)
 
 ## [Task 3: Explore the table and columns](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-2-explore-the-table-and-columns-)
 
@@ -454,14 +450,17 @@ the dynamic type to a numeric type, like long).
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
-> logsRaw
->| extend originalSize=Properties.OriginalSize,compressedSize=Properties.compressedSize| getschema
+      **Copy**
+      ```
+      logsRaw
+      | where Component == "DOWNLOADER"
+      | take 100
+      | extend originalSize=tolong(Properties.OriginalSize), compressedSize=tolong(Properties.compressedSize), toguid(ClientRequestId)
+      | getschema
+      ```
+      ![](./media/image54.png)
 
-<img src="./media/image47.png"
-style="width:7.14583in;height:4.51653in" />
-
-## [**Task 4: Keep the columns of your interest**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-3-keep-the-columns-of-your-interest-) 
+## **Task 4: Keep the columns of your interest**
 
 You are investigating an incident and wish to review only several
 columns of the dataset.
@@ -472,15 +471,16 @@ columns of the dataset.
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
-> logsRaw
->| project Timestamp, ClientRequestId, Level, Message
->| take 10
+      **Copy**
+      ```
+      logsRaw
+      | project Timestamp, ClientRequestId, Level, Message
+      | take 10
+      ```
+      
+      ![](./media/image55.png)
 
-<img src="./media/image48.png"
-style="width:7.38897in;height:3.22083in" />
-
-## [Task 5: Filter the output](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-4-filter-the-output-)
+## **Task 5: Filter the output**
 
 You are investigating an incident that occurred within a specific time
 frame.
@@ -492,16 +492,16 @@ frame.
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
-> ```**Copy**
-> logsRaw
->| where Timestamp between (datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
->| project Timestamp, ClientRequestId, Level, Message
->| take 10
+      **Copy**
+      ```
+      logsRaw
+      | project Timestamp, ClientRequestId, Level
+      | where Timestamp >= datetime(2014-03-08 01:00) and Timestamp <= datetime(2014-03-08 10:00)
+      | count
+      ```
+    ![](./media/image56.png)
 
-<img src="./media/image49.png"
-style="width:7.38402in;height:3.1375in" />
-
-## [Task 6: Sorting the results](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-5-sorting-the-results-)
+## **Task 6: Sorting the results**
 
 Your system generated an alert indicating a significant decrease in
 incoming data. You want to check the traces of the "INGESTOR_EXECUTER"
@@ -516,19 +516,18 @@ incoming data. You want to check the traces of the "INGESTOR_EXECUTER"
 3.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->logsRaw
-> | where Component == 'INGESTOR_EXECUTER'
-> | extend
-> rowCount=toint(Properties.rowCount)</span>
-> | where isnotempty(rowCount)
-> | sort by rowCount
-> | top 10 by rowCount desc
+      **Copy**
+      ```
+      logsRaw
+      | where Component == 'INGESTOR_EXECUTER'
+      | extend rowCount=toint(Properties.rowCount)
+      | where isnotempty(rowCount)
+      | sort by rowCount
+      | top 10 by rowCount desc
+      ```
+      ![](./media/image57.png)
 
-<img src="./media/image50.png"
-style="width:7.34766in;height:3.4375in" />
-
-## [Task 7: Data profiling](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-6-data-profiling-)
+##  **Task 7: Data profiling**
 
 1.  As part of the incident investigation, you want to
     extract format and rowCount from INGESTOR_EXECUTER \[sic\]
@@ -539,17 +538,17 @@ style="width:7.34766in;height:3.4375in" />
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->``` **Copy**
->logsRaw
->| where Component == 'INGESTOR_EXECUTER'
->| extend rowCount=toint(Properties.rowCount), fileFormat=tostring(Properties.format)
->| project Timestamp, fileFormat, rowCount, ClientRequestId, Component, Level, Message
->| take 10
+      **Copy**
+      ```
+      logsRaw
+      | where Component == 'INGESTOR_EXECUTER'
+      | extend rowCount=toint(Properties.rowCount), fileFormat=tostring(Properties.format) 
+      | project Timestamp, fileFormat, rowCount, ClientRequestId, Component, Level, Message
+      | take 10
+      ```
+      ![](./media/image58.png)
 
-<img src="./media/image51.png"
-style="width:7.38945in;height:3.12083in" />
-
-## [**Task 8: Total number of records**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-7-total-number-of-records-)
+## **Task 8: Total number of records** 
 
 The system comprises of several "components", but you don't know their
 names or how many records were generated by each.
@@ -560,33 +559,35 @@ names or how many records were generated by each.
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
-> ```**Copy**
->logsRaw
->| summarize count() by Component
-> <img src="./media/image52.png" style="width:6.5in;height:7.29167in"
-> alt="A screenshot of a computer Description automatically generated" />
+       **Copy**
+      ```
+      logsRaw
+      | summarize count() by Component
+      ```
+      ![](./media/image59.png)
 
-## [Task 9: Aggregations and string operations ](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-8-aggregations-and-string-operations-)
+## [**Task 9: Aggregations and string operations **](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-8-aggregations-and-string-operations-)
 
 You assume that the incident being investigated has a connection to the
 ingestion process run by Contoso's program.
 
 1.  Write a query to find out how many records contain the
-    string '**ingestion'** in the Message column. Aggregate the results
-    by **Level.**
+    string **ingestion** in the Message column. Aggregate the results
+    by **Level**
 
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->logsRaw
->| where Message has "ingestion"
->| summarize count() by Level
+      **Copy**
+      ```
+      logsRaw
+      | where Message has "ingestion"
+      | summarize count() by Level
+      ```
+      
+      ![](./media/image60.png)
 
-<img src="./media/image53.png"
-style="width:6.49167in;height:4.15833in" />
-
-## [Task 10: Render a chart ](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-9-render-a-chart-)
+## **Task 10: Render a chart ** 
 
 1.  Write a query to find out how many total records are present
     per Level (aggregated by Level) and render a piechart.
@@ -594,16 +595,17 @@ style="width:6.49167in;height:4.15833in" />
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
-> ```**Copy**
->logsRaw
->| summarize count() by Level
->| render piechart
+      **Copy**
+      ```
+      logsRaw
+      | where Component =='INGESTOR_EXECUTER'
+      | project Timestamp, Properties.size, fileFormat=tostring(Properties.format), rowCount=Properties.rowCount
+      | summarize count() by fileFormat
+      | render piechart 
+      ```
+      ![](./media/image61.png)
 
-> <img src="./media/image54.png"
-> style="width:6.49167in;height:3.80833in" />
-
-## [Task 11: Create bins and visualize time series **](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-3-task-10-create-bins-and-visualize-time-series-)
-
+##  **Task 11: Create bins and visualize time series ** 
 1.  Write a query to show a timechart of the number of records in 30
     minute bins (buckets). Each point on the timechart represent the
     number of logs in that bucket.
@@ -611,14 +613,15 @@ style="width:6.49167in;height:4.15833in" />
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->``` **Copy**
->logsRaw
->| summarize count() by bin(Timestamp, 30m)
->| render timechart
+      **Copy**
+      ```
+      logsRaw
+      | summarize count() by bin(Timestamp, 30m)
+      | render timechart
+      ```
+      ![](./media/image62.png)
 
-<img src="./media/image55.png" style="width:6.49167in;height:3.15in" />
-
-# [Exercise 4: Explore and Transform Data](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-4-explore-and-transform-data)
+#  **Exercise 4: Explore and Transform Data** 
 
 In this exercise we will explore 3 capabilities of Data Explorer
 
@@ -645,7 +648,7 @@ In this exercise we will explore 3 capabilities of Data Explorer
 > This function's output schema and target table schema should exactly
 > match.
 
-## [Task 1: User defined Function (Stored Functions)**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-4-task-1-user-defined-function-stored-functions-)
+##  **Task 1: User defined Function (Stored Functions)** 
 
 1.  Create a stored functions, named ManiputatelogsRaw, that will
     contain the code below. Make sure the function works.
@@ -653,17 +656,20 @@ In this exercise we will explore 3 capabilities of Data Explorer
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->logsRaw
->| where Component in (
->'INGESTOR_EXECUTER',
->'INGESTOR_GATEWAY',
->'INTEGRATIONDATABASE',
->'INTEGRATIONSERVICEFLOWS',
->'INTEGRATIONSERVICETRACE')
-
-<img src="./media/image56.png"
-style="width:7.41531in;height:3.8125in" />
+      **Copy**
+      ```
+      .create function ManiputatelogsRaw() {
+      logsRaw
+      | where Component in (
+        'INGESTOR_EXECUTER', 
+        'INGESTOR_GATEWAY', 
+        'INTEGRATIONDATABASE',
+        'INTEGRATIONSERVICEFLOWS', 
+        'INTEGRATIONSERVICETRACE', 
+        'DOWNLOADER')
+      }
+      ```
+      ![](./media/image63.png)
 
 ## [**Task 2: Create an update policy**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab1.md#challenge-4-task-2-create-an-update-policy-)
 
@@ -675,141 +681,87 @@ ingested into the new table ingestionLogs that we’ll create.
     following code and click on **▷ Run cell** button and review the
     output.
 
->```**Copy**
->.create table ingestionLogs (
->Timestamp: datetime,
->Source: string,
->Node: string,
->Level: string,
->Component: string,
->ClientRequestId: string,
->Message: string,
->Properties: dynamic)
-
-<img src="./media/image57.png"
-style="width:7.07581in;height:2.6625in" />
+      **Copy**
+      ```
+      .create table ingestionLogs (
+        Timestamp: datetime, 
+        Source: string,
+        Node: string, 
+        Level: string, 
+        Component: string, 
+        ClientRequestId: string, 
+        Message: string, 
+      Properties: dynamic)
+      ```
+      ![](./media/image64.png)
 
 2.  Create a function for the update policy, replace all the code in the
     **cell** with the following code and click on **▷ Run cell** button
     and review the output.
 
->```**Copy**
->.create function ingestionComponents(){
-> logsRaw
->| where Component has_any ('INGESTOR_EXECUTER','INGESTOR_GATEWAY', 'INTEGRATIONDATABASE','INTEGRATIONSERVICEFLOWS',
-> 'INTEGRATIONSERVICETRACE', 'DOWNLOADER')
->}
+      **Copy**
+      ```
+      .alter table ingestionLogs policy update @'[{ "IsEnabled": true, "Source": "logsRaw", "Query": "ManiputatelogsRaw()", "IsTransactional": true, "PropagateIngestionProperties": false}]'
+      ```
+      ![](./media/image65.png)
 
-<img src="./media/image58.png"
-style="width:7.35349in;height:2.7375in" />
-
-3.  Create the update policy(Fill in the blanks), replace all the code
-    in the **cell** with the following code and click on **▷ Run
-    cell** button and review the output.
-
->```**Copy**
-> .alter table ingestionLogs
->    policy update  @'[{ "IsEnabled": true,"Source": "logsRaw", "Query":"ingestionComponents()", "IsTransactional": true, "PropagateIngestionProperties": false}]'
-
-<img src="./media/image59.png"
-style="width:7.15349in;height:1.9125in" />
-
-4.  Update policy can transform and move the data from source table from
+3.  Update policy can transform and move the data from source table from
     the time it is created. It cannot look back at already existing data
     in source table. We will ingest new data into logsraw table and see
     new data flowing into ingestionLogs table
 
-5.  Replace all the code in the **cell** with the following code and
+4.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
-6.  copy **operationIds** and paste them in a notepad , and then
+5.  copy **operationIds** and paste them in a notepad , and then
     **Save** the notepad to use the information in the upcoming step.
 
->```**Copy**
->// Note: execute the below commands one after another => Using operationId(output of each command), 
->//check the status and execute a new command only after the previous one is completed
->
->.ingest async into table logsRaw (
->  h'https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/03/08/00/data.csv.gz?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D') 
->  with (format='csv',creationTime='2014-03-08T00:00:00Z');
->
->.ingest async into table logsRaw (
->  h'https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/03/08/01/data.csv.gz?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D') 
->  with (format='csv',creationTime='2014-03-08T01:00:00Z');
->
->.ingest async into table logsRaw (
->  h'https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/03/08/02/data.csv.gz?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D') 
->  with (format='csv', creationTime='2014-03-08T02:00:00Z');
->
->.ingest async into table logsRaw (
->  h'https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/03/08/03/data.csv.gz?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D') 
->  with (format='csv',creationTime='2014-03-08T03:00:00Z');
->
->.ingest async into table logsRaw (
->  h'https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/03/08/04/data.csv.gz?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D') 
->  with (format='csv', creationTime='2014-03-08T04:00:00Z');
+      **Copy**
+      ```
+      // Note, the following .ingest commands set creationTime to 2014 as you may notice in the file path.
+      // This param allows to backfill the table with historical data and index it according ot the creationTime setting.
+      
+      .execute database script <|
+      .ingest async into table logsRaw (h'https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014/03/08/00/data.csv.gz') with (format='csv', creationTime='2024-03-08T00:00:00Z');
+      .ingest async into table logsRaw (h'https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014/03/08/01/data.csv.gz') with (format='csv', creationTime='2024-03-08T01:00:00Z');
+      .ingest async into table logsRaw (h'https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014/03/08/02/data.csv.gz') with (format='csv', creationTime='2024-03-08T02:00:00Z');
+      .ingest async into table logsRaw (h'https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014/03/08/03/data.csv.gz') with (format='csv', creationTime='2024-03-08T03:00:00Z');
+      .ingest async into table logsRaw (h'https://adxsamplefiles.blob.core.windows.net/publiccsvsamples/logsbenchmark-onegb/2014/03/08/04/data.csv.gz') with (format='csv', creationTime='2024-03-08T04:00:00Z');
+      ```
+      
+      ![](./media/image66.png)
 
+      **Note:** The above command does not complete immediately. Because we
+      used the async parameter, the output of the above query will
+      be operationIds. The progress of the query can be checked by used the
+      below command
 
-<img src="./media/image60.png"
-style="width:7.14367in;height:2.82083in" />
-
-**Note:** The above command does not complete immediately. Because we
-used the async parameter, the output of the above query will
-be operationIds. The progress of the query can be checked by used the
-below command
-
-7.  Check progress of the commands, replace all the code in the **cell**
+6.  Check progress of the commands, replace all the code in the **cell**
     with the following code and click on **▷ Run cell** button and
     review the output.
 
->```Copy
->.show operations operationIds
+      Copy
+      ```
+        .show operations 
+      | where OperationId == ' OperationId '
+      ```
+      **Note:** Replace the operationIds which you have saved in Step 6
 
-**Note:** Replace the operationIds which you have saved in Step 6
+      ![](./media/image67.png)
 
-<img src="./media/image61.png"
-style="width:7.09236in;height:1.79358in" />
-
-8.  Make sure the data is transformed correctly in the destination
+7.  Make sure the data is transformed correctly in the destination
     table. Replace all the code in the **cell** with the following code
     and click on **▷ Run cell** button and review the output.
 
->```**Copy**
->ingestionLogs
->| count
+      **Copy**
+      ```
+      ingestionLogs
+      | count
+      ```
+      ![](./media/image68.png)
 
-<img src="./media/image62.png"
-style="width:6.06667in;height:3.96667in" />
-
-Check if the count of ingestionLogs table is 111,740.
-
-**Note:** If the count is not matching for ingestionLogs table, it means
-that one of the above .ingest commands have throttled or failed.
-
-9.  Please run the following command to clean **ingestionLogs** table.
-    Replace all the code in the **cell** with the following code and
-    click on **▷ Run cell** button and review the output.
-
->```**Copy**
->.clear table ingestionLogs data
-
-<img src="./media/image63.png" style="width:6.5in;height:4.79167in" />
-
-10. Now then run the above **.ingest** commands one by one and this will
-    result in 93,648 count in ingestionLogs table.
-
-11. Replace all the code in the **cell** with the following code and
-    click on **▷ Run cell** button and review the output.
-
-> ```**Copy**
->.alter table ingestionLogs policy update
->@'[{ "IsEnabled": true, "Source": "logsRaw","Query": "ingestionComponents()"}]'
->.set-or-append logsRaw <| logsRaw | take 100000>
->
->ingestionLogs | take 10
-
-<img src="./media/image64.png"
-style="width:7.38566in;height:3.99583in" />
+      **Note:** If the count is not matching for ingestionLogs table, it means
+      that one of the above .ingest commands have throttled or failed.
 
 #  [**Exercise 5: Advanced KQL, Policies, and Visualization**](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab2.md#lab-2-advanced-kql-policies-and-visualization)
 
@@ -854,16 +806,15 @@ Database.
 > data from cold cache, it’s recommended to target a small specific
 > range in time (“point in time”) for the queries to be efficient.
 
-## [Task 1: Change the retention policy via commands ](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab2.md#challenge-5-task-1-change-the-retention-policy-via-commands-)
+## [**Task 1: Change the retention policy via commands **](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab2.md#challenge-5-task-1-change-the-retention-policy-via-commands-)
 
 Database policies can be overridden per table using a KQL control
 command. A database cache and retention policies can be edited from the
 Fabric UI. Tables policies can be managed via a KQL command.
 
-1.  Select ***querysetXX*** KQL queryset in the left navigation pane.
+1.  Select  **querysetXX**  KQL queryset in the left navigation pane.
 
-<img src="./media/image65.png"
-style="width:5.22083in;height:5.72953in" />
+      ![](./media/image69.png)
 
 2.  Always use KQL commands to alter the policies of the entire
     Database/tables. Table level policy takes precedence over database
@@ -875,20 +826,27 @@ style="width:5.22083in;height:5.72953in" />
 4.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
->```Copy
->.alter table ingestionLogs policy retention ```
->{
->    "SoftDeletePeriod": "10:12:00:00",
->
->"Recoverability": "Enabled"
->}```
+      Copy
+  >  
+    .alter table ingestionLogs policy retention 
+      ```
+      { 
+          "SoftDeletePeriod": "10:12:00:00",
+          "Recoverability": "Enabled"
+      }
+      ```
+>     ![](./media/image70.png)
 
-<img src="./media/image66.png"
-style="width:7.07353in;height:2.62083in" />
+5.  Replace all the code in the **cell** with the following code and
+    click on **▷ Run cell** button and review the output
+      ```
+      .alter-merge table ingestionLogs policy retention softdelete = 30d
+      ```
+      ![](./media/image71.png)
 
 # [Exercise 6: Metadata objects handling using Control Commands](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab2.md#challenge-6-metadata-objects-handling-using-control-commands)
 
-## Task 1: .show/diagnostic logs/Insights
+## **Task 1: .show/diagnostic logs/Insights**
 
 Control commands are requests to the service to retrieve information
 that is not necessarily data in the database tables, or to modify the
@@ -919,34 +877,23 @@ dot (.) character, and no query may start with that character.
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
->```**Copy**
->// 1. Using pipe: Count how many tables are in the
-> database-in-scope:
->
-> .show tables
->
-> | count
->
-> // 2. Using semicolon: Count how many tables are in
-> the database-in-scope:
-> .show tables;
->
-> $command_results
->
-> | count
->
-> // 3. Using semicolon, and including a let
-> statement:
->
-> .show tables;
->
-> let
-> useless=(n:string){strcat(n,'-','useless')};
->
-> $command_results | extend LastColumn=useless(TableName)
-
-<img src="./media/image67.png"
-style="width:7.29961in;height:4.32917in" />
+      **Copy**
+      ```
+      // 1. Using pipe: Count how many tables are in the database-in-scope:
+      .show tables
+      | count
+      
+      // 2. Using semicolon: Count how many tables are in the database-in-scope:
+      .show tables;
+      $command_results
+      | count
+      
+      // 3. Using semicolon, and including a let statement:
+      .show tables;
+      let useless=(n:string){strcat(n,'-','useless')};
+      $command_results | extend LastColumn=useless(TableName)
+      ```
+      ![](./media/image72.png)
 
 ## **Task 2: Use .show queries**
 
@@ -959,32 +906,28 @@ queries were executed in the past 3 hours.
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
->```**Copy**
->
-> .show queries
->
-> | where StartedOn >ago(7d)
->
-> | summarize count() by User
+      **Copy**
+      ```
+      .show queries 
+      | where StartedOn >ago(7d)
+      | summarize count() by User
+      ```
+      
+      ![](./media/image73.png)
 
-<img src="./media/image68.png"
-style="width:7.02774in;height:3.9875in" />
-
-## Task 3: Use .journal commands
+## **Task 3: Use .journal commands**
 
 1.  To show the details of the function that you created earlier,
     replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
->```**Copy**
->
-> .show journal
->
-> | where EventTimestamp > ago(1h) and Event =='ADD-FUNCTION'
-> | project Event, EventTimestamp, ChangeCommand
-
-<img src="./media/image69.png"
-style="width:7.45087in;height:2.1875in" />
+      **Copy**
+      ```
+      .show journal
+      | where EventTimestamp > ago(1h) and Event =='ADD-FUNCTION'
+      | project Event, EventTimestamp, ChangeCommand
+      ```
+      ![](./media/image74.png)
 
 ## **Task 4: Use .show commands**
 
@@ -992,14 +935,13 @@ style="width:7.45087in;height:2.1875in" />
     replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->````**Copy**
->
->.show commands
->| where StartedOn >ago(4h)
->| summarize count() by User
-
-<img src="./media/image70.png"
-style="width:7.00887in;height:4.30417in" />
+      **Copy**
+      ```
+      .show commands
+      | where StartedOn >ago(4h)
+      | summarize count() by User
+      ```
+      ![](./media/image75.png)
 
 ## **Task 5: Table details and size**
 
@@ -1009,14 +951,15 @@ style="width:7.00887in;height:4.30417in" />
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output
 
->```Copy
->.show extents
->| summarize format_bytes(sum(OriginalSize),2,'MB'),format_bytes(sum(ExtentSize),2,'MB') by TableName
->
->.show tables details
-
-<img src="./media/image71.png"
-style="width:7.30929in;height:2.37083in" />
+      Copy
+      ```
+      .show extents
+      | summarize format_bytes(sum(OriginalSize),2,'MB'), format_bytes(sum(ExtentSize),2,'MB') by TableName
+      
+      .show tables details
+      ```
+      
+      ![](./media/image76.png)
 
 # [Exercise 7: Going more advanced with KQL](https://github.com/microsoft/FabricRTA-in-a-Day/blob/main/Lab2.md#challenge-7-going-more-advanced-with-kql)
 
@@ -1039,22 +982,22 @@ let statements are useful for:
     create **LogType** and **TimeBucket **variables with the following
     values:
 
-- LogType = 'Warning'
-
-- TimeBucket = 1m
+      - LogType = 'Warning'
+      
+      - TimeBucket = 1m
 
 2.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->let LogType = 'Warning';
->let TimeBucket = 1m;
->logsRaw
->| summarize count() by Level = LogType,bin(Timestamp,TimeBucket)
->| render timechart
-
-<img src="./media/image72.png"
-style="width:7.11819in;height:3.92917in" />
+      **Copy**
+      ```
+      let LogType = 'Warning';
+      let TimeBucket = 1m;
+      logsRaw
+      | summarize count() by Level = LogType, bin(Timestamp,TimeBucket)
+      | render timechart
+      ```
+      ![](./media/image77.png)
 
 ## **Task 2: Use the search operator**
 
@@ -1065,11 +1008,11 @@ specific columns or table names.
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
-Copy
-
-<span class="mark">search "Exception=System.Timeout" \| count</span>
-
-<img src="./media/image73.png" style="width:6.5in;height:3.54167in" />
+      Copy
+      ```
+      search  "Exception=System.Timeout" | count
+      ```
+      ![](./media/image78.png)
 
 ## **Task 3: Parse Key-Value pairs strings into separate columns**
 
@@ -1081,19 +1024,21 @@ trace, representing the information in a key/value form.
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->````Copy
->logsRaw
->| where Component == "INGESTOR_EXECUTER"
->| parse-kv Properties as (size: int, format:string, rowCount: int, cpuTime: string ,duration: string) //bug:cpuTime, duration truncated
->| take 20
->| evaluate bag_unpack(Properties)
->ingestionLogs
->| where Component == "INGESTOR_EXECUTER"
->| take 20
->| parse-kv Message as(IngestionCompletionEvent:string, path:string) with (pair_delimiter='file', kv_delimiter=':')
-
-<img src="./media/image74.png"
-style="width:7.42733in;height:3.57083in" />
+      Copy
+      ```
+      logsRaw 
+      | where Component == "INGESTOR_EXECUTER" 
+      //| parse-kv Properties as (size: int, format: string, rowCount: int, cpuTime: string , duration: string) //bug: cpuTime, duration truncated
+      | take 20
+      | evaluate bag_unpack(Properties)
+      
+      ingestionLogs 
+      | where Component == "INGESTOR_EXECUTER" 
+      | take 20 
+      | parse-kv Message as (IngestionCompletionEvent:string, path:string) with (pair_delimiter=' file', kv_delimiter=':')
+      ```
+      
+      ![](./media/image79.png)
 
 ## **Task 4: Nulls are important in timeseries analysis (Compare summarize and make-series)**
 
@@ -1105,20 +1050,22 @@ timechart.
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->logsRaw
->| where Component=='INGESTOR_EXECUTER' and Node=='Engine000000000378'
->| extend size=tolong(Properties.size)
->| summarize avg(size) by bin(Timestamp, 1h),Node
->| render timechart
->logsRaw
->| where Component=='INGESTOR_EXECUTER' and Node=='Engine000000000378'
->| extend size=tolong(Properties.size)
->| make-series avg(size) default=0 on Timestamp step 1h by Node
->| render timechart
-
-<img src="./media/image75.png"
-style="width:7.29748in;height:4.0375in" />
+      **Copy**
+      ```
+      logsRaw
+      | where Component=='INGESTOR_EXECUTER' and Node =='Engine000000000378'
+      | extend size=tolong(Properties.size)
+      | summarize avg(size) by bin(Timestamp, 1h), Node
+      | render timechart 
+      
+      logsRaw
+      | where Component=='INGESTOR_EXECUTER' and Node =='Engine000000000378'
+      | extend size=tolong(Properties.size)
+      | make-series avg(size) default=0 on Timestamp step 1h by Node
+      | render timechart
+      ```
+      
+      ![](./media/image80.png)
 
 ## **Task 5: Anomaly detection**
 
@@ -1130,21 +1077,23 @@ file sizes in 1-minute intervals.
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->
->ingestionLogs
->| extend size=tolong(Properties.size)
->| make-series avg(size) default=0 on Timestamp step 10m
->| extend anom=series_decompose_anomalies(avg_size)
->| render anomalychart with(anomalycolumns==anom)
->ingestionLogs
->| extend size=tolong(Properties.size)
->| make-series avg(size) default=0 on Timestamp step 10m
->| extend anom=series_decompose_anomalies(avg_size,0.5)
->| mv-expand Timestamp, avg_size, anom
->| where anom <> 0
-
-<img src="./media/image76.png" style="width:6.49167in;height:5.375in" />
+      **Copy**
+      ```
+      ingestionLogs
+      | extend size=tolong(Properties.size)
+      | make-series avg(size) default=0 on Timestamp step 10m
+      | extend anom=series_decompose_anomalies(avg_size)
+      | render anomalychart  with (anomalycolumns=anom)
+      
+      
+      ingestionLogs
+      | extend size=tolong(Properties.size)
+      | make-series avg(size) default=0 on Timestamp step 10m
+      | extend anom=series_decompose_anomalies(avg_size, 0.5)
+      | mv-expand Timestamp, avg_size, anom
+      | where anom <> 0
+      ```
+      ![](./media/image81.png)
 
 2.  To get a tabular format of the detected anomalies, you can use
     the mv-expand operator to expand the multi-value dynamic array of
@@ -1156,19 +1105,19 @@ file sizes in 1-minute intervals.
 3.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->ingestionLogs
->| where Component == "INGESTOR_EXECUTER"
->| extend fileSize=tolong(Properties.size)
->| make-series ActualSize=avg(fileSize) on Timestamp step 1min // Creates the time series, listed by data type
->| extend(AnomalyFlags, AnomalyScore, PredictedSize) = series_decompose_anomalies(ActualSize, -1) // Scores and extracts anomalies based on the output of make-series 
->| mv-expand ActualSize to typeof(double), Timestamp to typeof(datetime), AnomalyFlags to typeof(double),AnomalyScore to typeof(double), PredictedSize to typeof(long) // Expands the array created by series_decompose_anomalies()
->| where AnomalyFlags != 0  // Returns all positive and negative deviations from expected usage
->| project Timestamp,ActualSize = format_bytes(ActualSize, 2),PredictedSize = format_bytes(PredictedSize, 2), AnomalyScore, AnomalyFlags // Defines which columns to return 
->| sort by abs(AnomalyScore) desc // Sorts results by anomaly score in descending ordering
-
-<img src="./media/image77.png"
-style="width:7.3511in;height:3.67083in" />
+      **Copy**
+      ```
+      ingestionLogs
+      | where Component == "INGESTOR_EXECUTER"
+      | extend fileSize=tolong(Properties.size)
+      | make-series ActualSize=avg(fileSize) on Timestamp step 1min // Creates the time series, listed by data type
+      | extend(AnomalyFlags, AnomalyScore, PredictedSize) = series_decompose_anomalies(ActualSize, -1) // Scores and extracts anomalies based on the output of make-series 
+      | mv-expand ActualSize to typeof(double), Timestamp to typeof(datetime), AnomalyFlags to typeof(double),AnomalyScore to typeof(double), PredictedSize to typeof(long) // Expands the array created by series_decompose_anomalies()
+      | where AnomalyFlags != 0  // Returns all positive and negative deviations from expected usage
+      | project Timestamp,ActualSize = format_bytes(ActualSize, 2),PredictedSize = format_bytes(PredictedSize, 2), AnomalyScore, AnomalyFlags // Defines which columns to return 
+      | sort by abs(AnomalyScore) desc // Sorts results by anomaly score in descending ordering
+      ```
+      ![](./media/image82.png)
 
 # **Exercise 8: Visualization**
 
@@ -1185,25 +1134,23 @@ style="width:7.3511in;height:3.67083in" />
 
 3.  The following 2 tasks use the timefilter
     between 2014-03-08T00:00:00 and 2014-03-08T10:00:00
->```copy
-> ingestionLogs
->
-> | where Timestamp between (todatetime(_startTime)
-> .. todatetime(_endTime))
->
-> | summarize count() by bin(Timestamp, 10m),
-> Component
+
+      ingestionLogs
+      | where Timestamp between (todatetime(_startTime) .. todatetime(_endTime))
+      | summarize count() by bin(Timestamp, 10m), Component
+
 
 4.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->ingestionLogs
->| where Timestamp between (datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
->| summarize count() by bin(Timestamp, 10m),Component
-
-<img src="./media/image78.png"
-style="width:7.33296in;height:5.12083in" />
+      **Copy**
+      ```
+      ingestionLogs
+      | where Timestamp between (datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
+      | summarize count() by bin(Timestamp, 10m), Component
+      ```
+      
+      ![](./media/image83.png)
 
 5.  Parameterize (add Timefilter) and render an Anomaly chart using the
     following Anomaly detection query. The chart should show values
@@ -1211,408 +1158,44 @@ style="width:7.33296in;height:5.12083in" />
 
 6.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
-
->````**Copy**
->ingestionLogs
->| where Timestamp between (datetime(2014-03-08 01:00)..datetime(2014-03-08 10:00))
->| summarize count() by bin(Timestamp, 10m), Component| render timechart
-
-<img src="./media/image79.png"
-style="width:7.34008in;height:3.60417in" />
+      
+      **Copy**
+      ```
+      ingestionLogs
+      | where Timestamp between (datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
+      | summarize count() by bin(Timestamp, 10m), Component
+      | render timechart
+      ```
+      
+      ![](./media/image84.png)
 
 7.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->````**Copy**
-> let bucket=10m;
->
-> logsRaw
->
-> | where Timestamp between(datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
->
-> | make-series count() on Timestamp step bucket by Level
->
-> | extend anom = series_decompose_anomalies(count_)
->
-> | render anomalychart with (anomalycolumns=anom)
-
-<img src="./media/image80.png"
-style="width:7.31434in;height:3.60417in" />
+      **Copy**
+      ```
+      let bucket=10m;
+      logsRaw
+      | where Timestamp between(datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
+      | make-series count() on Timestamp step bucket by Level
+      | extend anom = series_decompose_anomalies(count_)
+      | render anomalychart with (anomalycolumns=anom)
+      ```
+      ![](./media/image85.png)
 
 ## **Task 2: Find the warning percentage**
 
 1.  Replace all the code in the **cell** with the following code and
     click on **▷ Run cell** button and review the output.
 
->```**Copy**
->ingestionLogs
->| where Timestamp between(datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
->| summarize count() by Level
->| render piechart
-
-<img src="./media/image81.png"
-style="width:6.62083in;height:3.93855in" />
-
-# Exercise 9: Eventstreams
-
-## Task 1: Create Eventstream
-
-1.  Select ***Fabric Real-Time AnalyticsXX*** workspace in the left
-    navigation pane.
-
-<img src="./media/image82.png"
-style="width:3.97917in;height:3.85984in" />
-
-2.  On the **Synapse Real-Time Analytics Home** page, from the menu bar,
-    select the **New** drop-down, and from there select **Eventstream.**
-    Name the Eventstream  ***RTA_EventStream*** and click on the
-    **Create** button.
-
-<img src="./media/image83.png" style="width:6.5in;height:6.7in" />
-
-<img src="./media/image84.png" style="width:3.05in;height:2.55833in" />
-
-<img src="./media/image85.png" style="width:6.5in;height:3.16944in" />
-
-3.  On the Eventstream, select **New source** and select **Custom
-    App*.
-
-<img src="./media/image86.png" style="width:6.5in;height:3.08333in" />
-
-4.  On the **Custom App** configuration page, enter the source name as
-    **RTAcustom** and click on **Add** button
-
-<img src="./media/image87.png"
-style="width:3.23333in;height:6.23333in" />
-
-5.  On the **Eventstream** pane**,** select the **keys** under the
-    Details ,copy the **connection strings-primarykey** and paste them
-    on a notepad, as you need them in the upcoming task
-
-<img src="./media/image88.png"
-style="width:6.49167in;height:4.13333in" />
-
-## Task 2: Import LogSteamSimulator notebook
-
-1.  Now, select ***Fabric Real-Time AnalyticsXX*** workspace in the left
-    navigation pane
-
-<img src="./media/image89.png" style="width:6.49167in;height:3.925in" />
-
-2.  On the **Synapse Real-Time Analytics Home** page, from the menu bar,
-    select the **New** drop-down, and from there select **Import
-    notebook.**
-
-<img src="./media/image90.png" style="width:6.5in;height:6.575in" />
-
-3.  Select **Upload** from the **Import status** pane that appears on
-    the right side of the screen.
-
-<img src="./media/image91.png" style="width:3.14167in;height:2.35in" />
-
-4.  Navigate and select **LogSteamSimulator** notebooks from
-    **C:\LabFiles**and click on the **Open** button.
-
-<img src="./media/image92.png"
-style="width:6.49167in;height:2.90833in" />
-
-5.  You will see a notification stating **Imported successfully.**
-
-6.  *Then*, select the ***LOgStreamSimulator* **notebook.
-
-<img src="./media/image93.png"
-style="width:7.25902in;height:3.42917in" />
-
-7.  To start the notebook, in the 1<sup>st</sup> cell paste the
-    **connection string of your custom app source**(the value that you
-    have saved in your notepad in the **Exercise 9\>Task 1\>Step 5)**,
-    select the **Run** icon that appears on the left side of the cell.
-
-<img src="./media/image94.png" style="width:6.5in;height:3in" />
-
-8.  To installs required library, select and run the 2<sup>nd</sup> ,
-    3<sup>rd</sup> cells.
-
-<img src="./media/image95.png"
-style="width:7.25417in;height:4.17184in" />
-
-<img src="./media/image96.png"
-style="width:7.35486in;height:3.02917in" />
-
-9.  To sends the data, select and run the 4<sup>th</sup> ,5<sup>th</sup>
-    cells.
-
-<img src="./media/image97.png"
-style="width:7.34949in;height:3.9625in" />
-
-<img src="./media/image98.png"
-style="width:7.37857in;height:4.30417in" />
-
-10. Select ***RTA-Eventstream*** in the left navigation pane.
-
-<img src="./media/image99.png" style="width:3.00833in;height:6.425in" />
-
-11. Open eventstream artifact, preview the data stream
-
-<img src="./media/image100.png"
-style="width:7.32058in;height:3.49583in" />
-
-## Task 3: Send data from the Eventstream to the KQL database
-
-1.  Our data should be arriving into our Eventstream, and we'll now
-    configure the data to be ingested into the KQL database we created
-    in the above task. On the Eventstream, click on ***New
-    destination***, then navigate and click on **KQL Database**.
-
-<img src="./media/image101.png"
-style="width:7.25482in;height:3.12917in" />
-
-2.  On the KQL settings, select ***Direct ingestion***. While we have
-    the opportunity to process event data at this stage, for our
-    purposes, we will ingest the data directly into the KQL database.
-    Set the destination name to ***RTA-Destination***, then select your
-    **workspace** and KQL database created in the above task, then click
-    on **Add and Configure** button.
-
-<img src="./media/image102.png"
-style="width:3.85833in;height:6.68333in" />
-
-3.  On the first settings page, select **logsRaw** table and click on
-    the **Next** button.
-
-<img src="./media/image103.png"
-style="width:7.22917in;height:4.18921in" />
-
-4.  The next page allows us to inspect and configure the schema. Be sure
-    to change the format from TXT to **JSON**, if necessary. The default
-    columns of *symbol*, *price*, and *timestamp* should be formatted as
-    shown in the below image; then click on the ***Finish*** button.
-
-<img src="./media/image104.png"
-style="width:7.03681in;height:4.11911in" />
-
-5.  On the **Summary** page, if there are no errors, you’ll see a
-    **green checkmark** as shown in the below image, then click on the
-    ***Close*** button to complete the configuration.
-
-<img src="./media/image105.png"
-style="width:6.97857in;height:4.07083in" />
-
-<img src="./media/image106.png" style="width:7.39346in;height:3.35628in"
-alt="A screenshot of a computer Description automatically generated" />
-
-6.  Now, select ***Fabric Real-Time AnalyticsXX*** workspace in the left
-    navigation pane.
-
-<img src="./media/image107.png"
-style="width:4.44583in;height:4.82851in" />
-
-7.  On the **Synapse Real-Time Analytics Home** page, Select **KQL
-    Queryset.**
-
-<img src="./media/image108.png"
-style="width:7.38125in;height:4.34358in" />
-
-8.  Replace all the code in the **cell** with the following code and
-    click on **▷ Run cell** button and review the output
->````copy
->logsRaw
->
->| take 10
-
-<img src="./media/image109.png"
-style="width:7.38154in;height:2.89583in" />
-
-9.  Replace all the code in the **cell** with the following code and
-    click on **▷ Run cell** button and review the output
->```copy
->//rate
->
->logsRaw
->
->| where ingestion_time() \> ago(1d)
->
->| make-series count() default=0 on ingestion_time() step 1m
->
->| render timechart
-
-<img src="./media/image110.png"
-style="width:7.30099in;height:3.57083in" />
-
-10. Replace all the code in the **cell** with the following code and
-    click on **▷ Run cell** button and review the output
->```
->//lag
->
->logsRaw
->
->| where ingestion_time() \>ago(1m)
->
->| summarize m=max(ingestion_time())
->
->| project lag=now()-m
-
-<img src="./media/image111.png"
-style="width:7.29903in;height:3.3875in" />
-
-# Exercise 10: Data Activator
-
-## Task 1: Create Reflex Item
-
-1.  On right side of Power BI home page, click on the **Settings** icon.
-
-2.  In **Settings** pane, scroll down to **Governance and insights**,
-    then click on **Admin portal** .
-
-<img src="./media/image112.png" style="width:4.65in;height:7.275in" />
-
-3.  In **Admin portal** pane, select **Tenant settings**, scroll down to
-    **Microsoft Fabric** section, click on **Data Activator**, then
-    enable it using the **toggle** button. After **Data Activator** were
-    Enabled, click on the **Apply** button.
-
-<img src="./media/image113.png"
-style="width:7.1398in;height:5.7375in" />
-
-4.  Now, select ***Fabric Real-Time AnalyticsXX*** workspace in the left
-    navigation pane
-
-<img src="./media/image114.png"
-style="width:5.7125in;height:5.18452in" />
-
-5.  At the bottom left of the Power BI portal, select
-    the **Real-Time-Intelligence** icon and switch to the **Data
-    Activator** experience
-
-<img src="./media/image115.png" style="width:6.5in;height:6.75in" />
-
-6.  Select **Reflex(Preview).**
-
-<img src="./media/image116.png"
-style="width:7.255in;height:6.04583in" />
-
-7.  Select ***RTA_Eventstream*** in the left navigation pane.
-
-<img src="./media/image117.png"
-style="width:5.05417in;height:4.82321in" />
-
-8.  On the ***StockEventstream*** page, add a new output by clicking on
-    the **+ (plus)** symbol on the **StockEventStream** object, and
-    select ***Reflex*** as shown in the below image.
-
-<img src="./media/image118.png"
-style="width:7.36549in;height:2.89583in" />
-
-9.  Configure the Reflex as follows and then click on the ***Add***
-    button:
-
-- Destination name: **Reflex**
-
-- Workspace: **RealTimeWorkspace** (or the name of your workspace)
-
-- Select Reflex and click on **Done** button.
-
-<img src="./media/image119.png"
-style="width:3.54167in;height:6.55833in" />
-
-10. You will get a notification that the destination “Reflex” was
-    **Successfully added**.
-
-<img src="./media/image120.png"
-style="width:7.30069in;height:3.58006in" />
-
-11. After the Reflex is added, open the Reflex by clicking the ***Data
-    preview*** at the bottom of the page as shown in the below image.
-
-<img src="./media/image121.png"
-style="width:7.301in;height:3.57083in" />
-
-## Task 2: Configure the object
-
-1.  Now, select ***Fabric Real-Time AnalyticsXX*** workspace in the left
-    navigation pane
-
-<img src="./media/image89.png" style="width:6.49167in;height:3.925in" />
-
-2.  In the *Fabric Real-Time AnalyticsXX pane**, ***Select
-    **RTA-Eventstream**
-
-<img src="./media/image122.png"
-style="width:6.49167in;height:4.95833in" />
-
-<img src="./media/image123.png" style="width:7.26461in;height:4.40611in"
-alt="A screenshot of a computer Description automatically generated" />
-
-3.  In **StockEventStram-Reflex** window, enter the following details in
-    the ***Assign your data** *pane*.* Then, click on ***Save** and
-    select **Save and go to design mode***.
-
-- Object name - **EngineNode**
-
-- Assign key column **- Node**
-
-- Assign properties - select **Level**
-
-<img src="./media/image124.png"
-style="width:7.33646in;height:4.6125in" />
-
-<img src="./media/image125.png"
-style="width:4.025in;height:6.58333in" />
-
-4.  
-
-<img src="./media/image126.png" style="width:7.3143in;height:3.46648in"
-alt="A screenshot of a computer Description automatically generated" />
-
-5.  To add a new trigger, in the top navigation bar, click on the ***New
-    Trigger*** button. In the **Unsaved change** dialog box, click on
-    the **Save** button
-
-<img src="./media/image127.png"
-style="width:7.27873in;height:4.6625in" />
-
-6.  Dropdown the **Select a property or event column**, select
-    **Existing property** and select **Level** property for the trigger.
-
-<img src="./media/image128.png"
-style="width:7.26235in;height:3.77083in" />
-
-<img src="./media/image129.png" style="width:7.39857in;height:3.31434in"
-alt="A screenshot of a computer Description automatically generated" />
-
-7.  **Define the condition to detect** pane, drop down the **change by**
-    , select **Common** and select **Change to**
-
-<img src="./media/image130.png"
-style="width:7.29837in;height:4.30417in" />
-
-8.  The conditions are met when Level property value changes from
-    "Information" to "Warning".
-
-<img src="./media/image131.png"
-style="width:7.39808in;height:3.57083in" />
-
-9.  Click on **Save** button
-
-<img src="./media/image132.png"
-style="width:6.49167in;height:2.05833in" />
-
-<img src="./media/image133.png" style="width:7.37747in;height:3.40656in"
-alt="A screenshot of a computer Description automatically generated" />
-
-10. Scroll down, click on the dropdown beside **Act** and select
-    **Email**.
-
-<img src="./media/image134.png"
-style="width:7.27174in;height:3.37917in" />
-
-11. Then, click on **Send me a test alert**.
-
-<img src="./media/image135.png"
-style="width:7.4156in;height:3.84583in" />
-
-**Important Note:**  Users having a trial account won't receive
-notifications.
+      **Copy**
+      ```
+      ingestionLogs
+      | where Timestamp between(datetime(2014-03-08 01:00).. datetime(2014-03-08 10:00))
+      | summarize count() by Level
+      | render piechart
+      ```
+    ![](./media/image86.png)
 
 **Summary**
 
