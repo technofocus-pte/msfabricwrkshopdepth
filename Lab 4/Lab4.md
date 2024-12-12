@@ -64,7 +64,7 @@ transform, and load* (ETL) process.
    
        a) Link to file: Selected
     
-       b) File path or URL: https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv
+       b) File path or URL: +++https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv+++
 
       ![](./media/new30.png)
     
