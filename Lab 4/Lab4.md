@@ -60,13 +60,15 @@ transform, and load* (ETL) process.
 
      ![](./media/image120.png)
 
-4.  In the **Connect to data source** pane,
+4.  In the **Connect to data source** pane
+   
        a) Link to file: Selected
+    
        b) File path or URL: https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv
 
       ![](./media/new30.png)
     
-5.  In the **Connect to data source** pane, under **Connection
+6.  In the **Connect to data source** pane, under **Connection
     credentials,** enter the following details and click on the **Next**
     button.
 
